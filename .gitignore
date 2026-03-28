@@ -1,0 +1,24 @@
+# Node modules
+node_modules/
+
+# Python cache
+__pycache__
+*.py[cod]
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Opencode specific
+.opencode/tool-output/
+
+# Development utils
+utils/

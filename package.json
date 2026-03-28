@@ -1,0 +1,18 @@
+{
+  "name": "antigravity-kit-opencode",
+  "version": "1.0.0",
+  "description": "Antigravity Kit adapted for Opencode - AI agent capability expansion toolkit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "opencode",
+    "ai-agent",
+    "development-toolkit",
+    "antigravity-kit"
+  ],
+  "author": "Antigravity Kit Contributors",
+  "license": "MIT",
+  "dependencies": {}
+}
