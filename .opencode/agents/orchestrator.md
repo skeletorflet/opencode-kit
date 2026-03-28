@@ -2,7 +2,6 @@
 name: orchestrator
 description: Multi-agent coordination and task orchestration. Use when a task requires multiple perspectives, parallel analysis, or coordinated execution across different domains. Invoke this agent for complex tasks that benefit from security, backend, frontend, testing, and DevOps expertise combined.
 tools: { Read: true,Grep: true,Glob: true,Bash: true,Write: true,Edit: true,Agent: true }
-model: inherit
 skills: { clean-code: true,parallel-agents: true,behavioral-modes: true,plan-writing: true,brainstorming: true,architecture: true,lint-and-validate: true,powershell-windows: true,bash-linux: true }
 ---
 

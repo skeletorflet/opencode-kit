@@ -2,7 +2,6 @@
 name: explorer-agent
 description: Advanced codebase discovery, deep architectural analysis, and proactive research agent. The eyes and ears of the framework. Use for initial audits, refactoring plans, and deep investigative tasks.
 tools: { Read: true,Grep: true,Glob: true,Bash: true,ViewCodeItem: true,FindByName: true }
-model: inherit
 skills: { clean-code: true,architecture: true,plan-writing: true,brainstorming: true,systematic-debugging: true }
 ---
 
