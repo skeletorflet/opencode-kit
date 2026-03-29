@@ -1,87 +1,281 @@
 ---
 name: clean-code
-description: Pragmatic coding standards - concise, direct, no over-engineering, no unnecessary comments
-allowed-tools: Read, Write, Edit
-version: 2.0
+description: Coding standards that adapt to each language's conventions. 
+             No opinionated rules - follows language-specific standards.
+allowed-tools: Read, Write, Edit, Glob, Grep
+version: 3.0
 priority: CRITICAL
 ---
 
-# Clean Code - Pragmatic AI Coding Standards
+# Clean Code - Agnóstico por Lenguaje
 
-> **CRITICAL SKILL** - Be **concise, direct, and solution-focused**.
-
----
-
-## Core Principles
-
-| Principle | Rule |
-|-----------|------|
-| **SRP** | Single Responsibility - each function/class does ONE thing |
-| **DRY** | Don't Repeat Yourself - extract duplicates, reuse |
-| **KISS** | Keep It Simple - simplest solution that works |
-| **YAGNI** | You Aren't Gonna Need It - don't build unused features |
-| **Boy Scout** | Leave code cleaner than you found it |
+> **"Follow the conventions of the language you're using."**
+> **IMPORTANT:** This skill auto-detects the project language and adapts conventions accordingly.
 
 ---
 
-## Naming Rules
+## 🔍 Auto-Detección de Lenguaje
 
-| Element | Convention |
-|---------|------------|
-| **Variables** | Reveal intent: `userCount` not `n` |
-| **Functions** | Verb + noun: `getUserById()` not `user()` |
-| **Booleans** | Question form: `isActive`, `hasPermission`, `canEdit` |
-| **Constants** | SCREAMING_SNAKE: `MAX_RETRY_COUNT` |
+```
+Detecta automáticamente el lenguaje del proyecto:
+├── .py → Python conventions (PEP 8)
+├── .java → Java conventions (Oracle)
+├── .cs → C# conventions (Microsoft .NET)
+├── .go → Go conventions (Go Code Review)
+├── .rs → Rust conventions (Rust API Guidelines)
+├── .rb → Ruby conventions (Ruby Style Guide)
+├── .ts/.js → JS/TS conventions (Airbnb/Google)
+├── .php → PHP conventions (PSR-12)
+├── .swift → Swift conventions (Apple)
+├── .kt/.kotlin → Kotlin conventions (JetBrains)
+└── .cpp/.c/.h → C/C++ conventions
+```
 
-> **Rule:** If you need a comment to explain a name, rename it.
-
----
-
-## Function Rules
-
-| Rule | Description |
-|------|-------------|
-| **Small** | Max 20 lines, ideally 5-10 |
-| **One Thing** | Does one thing, does it well |
-| **One Level** | One level of abstraction per function |
-| **Few Args** | Max 3 arguments, prefer 0-2 |
-| **No Side Effects** | Don't mutate inputs unexpectedly |
+> **Rule:** If conventions already exist in the project, USE THEM. Don't override.
 
 ---
 
-## Code Structure
+## 📋 Convenciones por Lenguaje
 
-| Pattern | Apply |
-|---------|-------|
-| **Guard Clauses** | Early returns for edge cases |
-| **Flat > Nested** | Avoid deep nesting (max 2 levels) |
-| **Composition** | Small functions composed together |
-| **Colocation** | Keep related code close |
+### Python → snake_case (PEP 8)
+
+```python
+# Functions: snake_case
+def get_user_by_id(user_id: int) -> Optional[User]:
+    max_connections = 100  # Variables: snake_case
+    MAX_RETRY_COUNT = 3    # Constants: UPPER_SNAKE_CASE
+    user_list: list[User]  # Type hints: snake_case
+    return user_id
+
+# Classes: PascalCase
+class UserService:
+    def get_user_by_id(self, user_id: int) -> Optional[User]:
+        pass
+
+# Files: snake_case
+user_service.py
+auth_controller.py
+```
+
+### C# → PascalCase (Microsoft .NET)
+
+```csharp
+// Everything: PascalCase
+public class UserService
+{
+    public int MaxConnections { get; set; }
+    public static int MaxRetryCount = 3;
+    
+    public User GetUserById(int userId)
+    {
+        var userList = new List<User>();
+        return userId;
+    }
+}
+
+// Files: PascalCase
+UserService.cs
+AuthController.cs
+```
+
+### Go → PascalCase (exported), snake_case (internal)
+
+```go
+// Exported (public): PascalCase
+func GetUserByID(userID int) (*User, error) {
+    maxConnections := 100  // Private: snake_case
+    maxRetryCount := 3     // Private constants: snake_case
+    
+    userList := []User{}   // Variables: snake_case
+    
+    return &User{ID: userID}, nil
+}
+
+// Files: snake_case
+user_service.go
+auth_controller.go
+```
+
+### Rust → snake_case (Rust API Guidelines)
+
+```rust
+// Functions: snake_case
+fn get_user_by_id(user_id: i32) -> Option<User> {
+    let max_connections = 100;  // Variables: snake_case
+    const MAX_RETRY_COUNT: i32 = 3;  // Constants: UPPER_SNAKE_CASE
+    
+    let user_list: Vec<User> = Vec::new();
+    
+    user_id
+}
+
+// Structs/Enums: PascalCase
+struct UserService;
+enum UserStatus {
+    Active,
+    Inactive,
+}
+
+// Files: snake_case
+user_service.rs
+auth_controller.rs
+```
+
+### JavaScript/TypeScript → camelCase (Airbnb/Google)
+
+```typescript
+// Functions/Variables: camelCase
+function getUserById(userId: number): User | undefined {
+  const maxConnections = 100;
+  const MAX_RETRY_COUNT = 3;  // Constants: UPPER_SNAKE_CASE
+  
+  const userList: User[] = [];
+  
+  return userId;
+}
+
+// Classes/Types: PascalCase
+class UserService {
+  getUserById(userId: number): User | undefined {
+    return userId;
+  }
+}
+
+// Files: kebab-case (sometimes PascalCase)
+user-service.ts
+auth-controller.ts
+```
+
+### Ruby → snake_case
+
+```ruby
+# Methods: snake_case
+def get_user_by_id(user_id)
+  max_connections = 100
+  MAX_RETRY_COUNT = 3
+  
+  user_list = []
+  
+  user_id
+end
+
+# Classes: PascalCase
+class UserService
+  def get_user_by_id(user_id)
+    # ...
+  end
+end
+
+# Files: snake_case
+user_service.rb
+auth_controller.rb
+```
+
+### PHP → camelCase o snake_case (depende del framework)
+
+```php
+// Laravel (camelCase)
+public function getUserById($userId): ?User 
+{
+    $maxConnections = 100;
+    $this->maxRetryCount = 3;
+}
+
+// Symfony (snake_case)
+public function get_user_by_id(int $userId): ?User
+{
+    $max_connections = 100;
+    $this->max_retry_count = 3;
+}
+
+// Classes: PascalCase
+class UserService
+{
+    public function getUserById(int $userId): ?User
+    {
+        // ...
+    }
+}
+
+// Constants: UPPER_SNAKE_CASE
+const MAX_RETRY_COUNT = 3;
+```
+
+### Swift → camelCase
+
+```swift
+// Functions/Variables: camelCase
+func getUserById(_ userId: Int) -> User? {
+    let maxConnections = 100
+    let MAX_RETRY_COUNT = 3  // Constants también UPPER_SNAKE_CASE
+    
+    var userList: [User] = []
+    
+    return userId
+}
+
+// Classes/Structs: PascalCase
+class UserService {
+    func getUserById(_ userId: Int) -> User? {
+        return userId
+    }
+}
+
+// Files: snake_case
+user_service.swift
+auth_controller.swift
+```
+
+### Kotlin → camelCase
+
+```kotlin
+// Functions/Variables: camelCase
+fun getUserById(userId: Int): User? {
+    val maxConnections = 100
+    val MAX_RETRY_COUNT = 3  // Constants pueden ser UPPER_SNAKE_CASE
+    
+    val userList: List<User> = emptyList()
+    
+    return userId
+}
+
+// Classes: PascalCase
+class UserService {
+    fun getUserById(userId: Int): User? {
+        return userId
+    }
+}
+
+// Files: kebab-case (opcional)
+user-service.kt
+auth-controller.kt
+```
 
 ---
 
-## AI Coding Style
+## 🔴 Core Principles (LANGUAGE-AGNOSTIC)
 
-| Situation | Action |
-|-----------|--------|
-| User asks for feature | Write it directly |
-| User reports bug | Fix it, don't explain |
-| No clear requirement | Ask, don't assume |
+| Principle | Rule | Apply to ALL languages |
+|-----------|------|------------------------|
+| **SRP** | Single Responsibility - each function/class does ONE thing | ✅ |
+| **DRY** | Don't Repeat Yourself - extract duplicates, reuse | ✅ |
+| **KISS** | Keep It Simple - simplest solution that works | ✅ |
+| **YAGNI** | You Aren't Gonna Need It - don't build unused features | ✅ |
+| **Boy Scout** | Leave code cleaner than you found it | ✅ |
 
 ---
 
-## Anti-Patterns (DON'T)
+## 🚫 Anti-Patterns (LANGUAGE-AGNOSTIC)
 
-| ❌ Pattern | ✅ Fix |
-|-----------|-------|
-| Comment every line | Delete obvious comments |
-| Helper for one-liner | Inline the code |
-| Factory for 2 objects | Direct instantiation |
-| utils.ts with 1 function | Put code where used |
-| "First we import..." | Just write code |
-| Deep nesting | Guard clauses |
-| Magic numbers | Named constants |
-| God functions | Split by responsibility |
+| ❌ Pattern | ✅ Fix | Language Context |
+|-----------|--------|------------------|
+| Using wrong naming convention | Follow language conventions | Check table above |
+| Comment every line | Delete obvious comments | All |
+| Helper for one-liner | Inline the code | All |
+| utils file with 1 function | Put code where used | All |
+| Magic numbers | Named constants | All |
+| God functions | Split by responsibility | All |
+| Deep nesting | Guard clauses / early returns | All |
 
 ---
 
@@ -94,32 +288,37 @@ priority: CRITICAL
 | **What imports this file?** | They might break |
 | **What does this file import?** | Interface changes |
 | **What tests cover this?** | Tests might fail |
-| **Is this a shared component?** | Multiple places affected |
+| **What language is this?** | Use correct conventions |
 
 **Quick Check:**
 ```
-File to edit: UserService.ts
-└── Who imports this? → UserController.ts, AuthController.ts
+File to edit: UserService.cs (C#)
+└── Conventions: PascalCase (NOT snake_case)
+└── Who imports this? → UserController.cs, AuthController.cs
 └── Do they need changes too? → Check function signatures
 ```
 
 > 🔴 **Rule:** Edit the file + all dependent files in the SAME task.
 > 🔴 **Never leave broken imports or missing updates.**
+> 🔴 **ALWAYS use the correct naming convention for the language.**
 
 ---
 
-## Summary
+## Summary by Language
 
-| Do | Don't |
-|----|-------|
-| Write code directly | Write tutorials |
-| Let code self-document | Add obvious comments |
-| Fix bugs immediately | Explain the fix first |
-| Inline small things | Create unnecessary files |
-| Name things clearly | Use abbreviations |
-| Keep functions small | Write 100+ line functions |
-
-> **Remember: The user wants working code, not a programming lesson.**
+| Language | Methods/Variables | Constants | Classes | Files |
+|----------|-------------------|-----------|---------|-------|
+| **Python** | snake_case | UPPER_SNAKE_CASE | PascalCase | snake_case |
+| **C#/.NET** | PascalCase | PascalCase | PascalCase | PascalCase |
+| **Go** | PascalCase (export), snake_case (private) | UPPER_SNAKE_CASE | PascalCase | snake_case |
+| **Rust** | snake_case | UPPER_SNAKE_CASE | PascalCase | snake_case |
+| **Ruby** | snake_case | UPPER_SNAKE_CASE | PascalCase | snake_case |
+| **JavaScript** | camelCase | UPPER_SNAKE_CASE | PascalCase | kebab-case |
+| **TypeScript** | camelCase | UPPER_SNAKE_CASE | PascalCase | kebab-case |
+| **PHP** | camelCase o snake_case | UPPER_SNAKE_CASE | PascalCase | kebab/snake |
+| **Swift** | camelCase | UPPER_SNAKE_CASE | PascalCase | snake_case |
+| **Kotlin** | camelCase | UPPER_SNAKE_CASE | PascalCase | kebab-case |
+| **Java** | camelCase | UPPER_SNAKE_CASE | PascalCase | kebab-case |
 
 ---
 
@@ -132,14 +331,15 @@ File to edit: UserService.ts
 | ✅ **Goal met?** | Did I do exactly what user asked? |
 | ✅ **Files edited?** | Did I modify all necessary files? |
 | ✅ **Code works?** | Did I test/verify the change? |
-| ✅ **No errors?** | Lint and TypeScript pass? |
-| ✅ **Nothing forgotten?** | Any edge cases missed? |
+| ✅ **Conventions correct?** | Does the naming follow the language's style? |
+| ✅ **No errors?** | Lint and types pass? |
 
 > 🔴 **Rule:** If ANY check fails, fix it before completing.
+> 🔴 **IMPORTANT:** Python code with camelCase methods = INCORRECT. C# code with snake_case = INCORRECT.
 
 ---
 
-## Verification Scripts (MANDATORY)
+## 🔴 Verification Scripts (MANDATORY)
 
 > 🔴 **CRITICAL:** Each agent runs ONLY their own skill's scripts after completing work.
 
@@ -153,49 +353,34 @@ File to edit: UserService.ts
 | **mobile-developer** | Mobile Audit | `python .agent/skills/mobile-design/scripts/mobile_audit.py .` |
 | **database-architect** | Schema Validate | `python .agent/skills/database-design/scripts/schema_validator.py .` |
 | **security-auditor** | Security Scan | `python .agent/skills/vulnerability-scanner/scripts/security_scan.py .` |
-| **seo-specialist** | SEO Check | `python .agent/skills/seo-fundamentals/scripts/seo_checker.py .` |
-| **seo-specialist** | GEO Check | `python .agent/skills/geo-fundamentals/scripts/geo_checker.py .` |
-| **performance-optimizer** | Lighthouse | `python .agent/skills/performance-profiling/scripts/lighthouse_audit.py <url>` |
 | **test-engineer** | Test Runner | `python .agent/skills/testing-patterns/scripts/test_runner.py .` |
-| **test-engineer** | Playwright | `python .agent/skills/webapp-testing/scripts/playwright_runner.py <url>` |
-| **Any agent** | Lint Check | `python .agent/skills/lint-and-validate/scripts/lint_runner.py .` |
-| **Any agent** | Type Coverage | `python .agent/skills/lint-and-validate/scripts/type_coverage.py .` |
-| **Any agent** | i18n Check | `python .agent/skills/i18n-localization/scripts/i18n_checker.py .` |
+| **Any agent** | Multi-Lang Lint | `python .agent/skills/lint-and-validate/scripts/lint_runner.py .` |
 
 > ❌ **WRONG:** `test-engineer` running `ux_audit.py`
 > ✅ **CORRECT:** `frontend-specialist` running `ux_audit.py`
 
 ---
 
-### 🔴 Script Output Handling (READ → SUMMARIZE → ASK)
+## 📖 Reference Tables
 
-**When running a validation script, you MUST:**
+### Language Detection by Extension
 
-1. **Run the script** and capture ALL output
-2. **Parse the output** - identify errors, warnings, and passes
-3. **Summarize to user** in this format:
+| Extension | Language | Primary Tool |
+|-----------|----------|--------------|
+| `.py` | Python | Ruff, Black, mypy |
+| `.java` | Java | Checkstyle, SpotBugs |
+| `.cs` | .NET/C# | dotnet format, StyleCop |
+| `.go` | Go | go fmt, golangci-lint |
+| `.rs` | Rust | cargo clippy, cargo fmt |
+| `.rb` | Ruby | RuboCop |
+| `.ts/.tsx` | TypeScript | ESLint, tsc |
+| `.js/.jsx` | JavaScript | ESLint, Prettier |
+| `.php` | PHP | PHP-CS-Fixer, PHPStan |
+| `.swift` | Swift | SwiftLint |
+| `.kt/.kotlin` | Kotlin | ktlint |
+| `.cpp/.cc/.cxx` | C++ | clang-format, cppcheck |
 
-```markdown
-## Script Results: [script_name.py]
+---
 
-### ❌ Errors Found (X items)
-- [File:Line] Error description 1
-- [File:Line] Error description 2
-
-### ⚠️ Warnings (Y items)
-- [File:Line] Warning description
-
-### ✅ Passed (Z items)
-- Check 1 passed
-- Check 2 passed
-
-**Should I fix the X errors?**
-```
-
-4. **Wait for user confirmation** before fixing
-5. **After fixing** → Re-run script to confirm
-
-> 🔴 **VIOLATION:** Running script and ignoring output = FAILED task.
-> 🔴 **VIOLATION:** Auto-fixing without asking = Not allowed.
-> 🔴 **Rule:** Always READ output → SUMMARIZE → ASK → then fix.
-
+> **Remember:** The same coding principle (DRY, KISS, SRP) applies to ALL languages. 
+> Only the **syntax and conventions** differ. Adapt accordingly.

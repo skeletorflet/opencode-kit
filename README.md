@@ -1,304 +1,359 @@
-# 🚀 Antigravity Kit for Opencode
+# 🚀 Antigravity Kit for Opencode - MULTI-LANGUAGE EDITION
 
-A comprehensive AI agent capability expansion toolkit designed to enhance your development workflow with specialized agents, skills, and workflows.
+A comprehensive AI agent capability expansion toolkit designed to enhance your development workflow with specialized agents, skills, and workflows. Now supports **12+ programming languages** with language-agnostic conventions.
 
 ## 📋 Overview
 
 Antigravity Kit is a modular system consisting of:
-- **20 Specialist Agents** 👥 - Role-based AI personas for different development domains
-- **36 Skills** 🧩 - Domain-specific knowledge modules that agents can load on-demand
-- **11 Workflows** ⚡ - Slash command procedures for common development tasks
-- **Rules & Scripts** 📜 - Validation and configuration files
+- **27 Specialist Agents** 👥 - Role-based AI personas
+- **49 Skills** 🧩 - Domain-specific knowledge modules
+- **27 Templates** 📦 - Multi-stack app scaffolding
+- **11 Workflows** ⚡ - Slash command procedures
+- **5 GitHub Actions CI/CD** 🚀 - Multi-language CI/CD pipelines
+- **Multi-language Scripts** 🐍 - Linting and testing for all languages
 
-> This kit has been adapted from the original Antigravity Kit to work seamlessly with Opencode.
+> This kit has been adapted from the original Antigravity Kit to work seamlessly with Opencode. Now with FULL multi-language support.
+
+---
+
+## 🌐 Supported Languages & Frameworks
+
+| Language | Framework | Skill | Template | Key Tooling |
+|----------|-----------|-------|----------|-------------|
+| **JS/TS** | Node.js | nestjs-expert | nestjs-api | NestJS, TypeORM |
+| **JS/TS** | Next.js | react-best-practices | nextjs-fullstack | React, Prisma |
+| **JS/TS** | SvelteKit | svelte-expert | sveltekit-app | SvelteKit, Prisma |
+| **Python** | FastAPI | python-patterns | python-fastapi | FastAPI, SQLAlchemy |
+| **Python** | Django | django-patterns | django-app | Django, DRF, Celery |
+| **Go** | Gin/Fiber | go-patterns | go-gin-api, go-fiber-api | GORM |
+| **Java** | Spring Boot | java-expert | spring-boot-api | JPA, Hibernate |
+| **.NET** | ASP.NET Core | dotnet-expert | aspnet-core-api | EF Core |
+| **Kotlin** | Ktor | kotlin-expert | ktor-api | Exposed |
+| **PHP** | Laravel | php-patterns | laravel-app | Eloquent |
+| **Ruby** | Rails | ruby-patterns | rails-app | ActiveRecord |
+| **Rust** | Axum | rust-pro | rust-axum-api | SQLx |
+
+---
 
 ## 📁 Directory Structure
 
 ```
 .opencode/
-├── ARCHITECTURE.md          # 📖 This documentation file
-├── agents/                  # 👨‍💼 20 Specialist Agents
-├── skills/                  # 🧰 36 Skills
-├── workflows/               # 🔄 11 Slash Commands
-├── rules/                   # 📏 Global Rules
-├── scripts/                 # 🐍 Master Validation Scripts
-├── mcp_config.json          # 🔌 MCP Server Configuration
-└── package.json             # 📦 Dependencies
+├── ARCHITECTURE.md              # 📖 Complete architecture docs
+├── agents/                      # 👨‍💼 27 Specialist Agents
+├── skills/                      # 🧰 49 Skills
+│   ├── nestjs-expert/           # NEW - NestJS 10+
+│   ├── django-patterns/         # NEW - Django 4.2+
+│   ├── go-patterns/             # Go patterns
+│   ├── java-expert/             # Java 21+
+│   ├── dotnet-expert/           # .NET 8
+│   ├── kotlin-expert/           # Kotlin 2.0
+│   ├── php-patterns/            # PHP 8.3
+│   ├── ruby-patterns/           # Ruby 3.3
+│   ├── cpp-modern/              # C++23
+│   ├── swift-expert/            # Swift 5.9
+│   ├── naming-conventions/      # Multi-language conventions
+│   └── [more skills...]
+├── skills/app-builder/templates/ # 📦 27 Templates
+│   ├── nestjs-api/              # NEW
+│   ├── django-app/              # NEW
+│   ├── sveltekit-app/           # NEW
+│   └── [more templates...]
+├── .github/workflows/           # 🚀 5 CI/CD Pipelines
+│   ├── go-ci.yml
+│   ├── java-ci.yml
+│   ├── dotnet-ci.yml
+│   ├── python-ci.yml
+│   └── nodejs-ci.yml
+└── scripts/                     # 🐍 Validation Scripts
+│   ├── lint-and-validate/       # 🔄 Refactored - Multi-language linting
+│   └── [more skills...]
+├── skills/app-builder/templates/ # 📦 24 Templates
+│   ├── go-gin-api/              # NEW
+│   ├── spring-boot-api/         # NEW
+│   ├── aspnet-core-api/         # NEW
+│   ├── rails-app/               # NEW
+│   ├── laravel-app/             # NEW
+│   └── [more templates...]
+├── scripts/                     # 🐍 Validation Scripts
+│   ├── linters/
+│   │   └── lint_runner.py       # Multi-language linter
+│   └── testrunners/
+│       └── test_runner_multi.py # Multi-language test runner
+└── mcp_config.json              # MCP Server Configuration
 ```
 
-## 👨‍💼 Specialist Agents (20)
+---
 
-Each agent is a specialized AI persona designed for specific development domains:
+## 👨‍💼 Specialist Agents (27)
 
+### Original Agents (20)
+| Agent | Focus |
+|-------|-------|
+| `orchestrator` | Multi-agent coordination |
+| `project-planner` | Discovery, task planning |
+| `frontend-specialist` | Web UI/UX |
+| `backend-specialist` | API, business logic |
+| `database-architect` | Schema, SQL |
+| `mobile-developer` | iOS, Android, RN |
+| `game-developer` | Game logic, mechanics |
+| `devops-engineer` | CI/CD, Docker |
+| `security-auditor` | Security compliance |
+| `penetration-tester` | Offensive security |
+| `test-engineer` | Testing strategies |
+| `debugger` | Root cause analysis |
+| `performance-optimizer` | Speed, Web Vitals |
+| `seo-specialist` | Ranking, visibility |
+| `documentation-writer` | Manuals, docs |
+| `product-manager` | Requirements, user stories |
+| `product-owner` | Strategy, backlog, MVP |
+| `qa-automation-engineer` | E2E testing, CI pipelines |
+| `code-archaeologist` | Legacy code, refactoring |
+| `explorer-agent` | Codebase analysis |
+
+### NEW: Multi-Language Agents (7)
 | Agent | Focus | Key Skills |
-|-------|-------|------------|
-| `orchestrator` | Multi-agent coordination | parallel-agents, behavioral-modes |
-| `project-planner` | Discovery, task planning | brainstorming, plan-writing, architecture |
-| `frontend-specialist` | Web UI/UX | frontend-design, react-best-practices, tailwind-patterns |
-| `backend-specialist` | API, business logic | api-patterns, nodejs-best-practices, database-design |
-| `database-architect` | Schema, SQL | database-design, prisma-expert |
-| `mobile-developer` | iOS, Android, RN | mobile-design |
-| `game-developer` | Game logic, mechanics | game-development |
-| `devops-engineer` | CI/CD, Docker | deployment-procedures, docker-expert |
-| `security-auditor` | Security compliance | vulnerability-scanner, red-team-tactics |
-| `penetration-tester` | Offensive security | red-team-tactics |
-| `test-engineer` | Testing strategies | testing-patterns, tdd-workflow, webapp-testing |
-| `debugger` | Root cause analysis | systematic-debugging |
-| `performance-optimizer` | Speed, Web Vitals | performance-profiling |
-| `seo-specialist` | Ranking, visibility | seo-fundamentals, geo-fundamentals |
-| `documentation-writer` | Manuals, docs | documentation-templates |
-| `product-manager` | Requirements, user stories | plan-writing, brainstorming |
-| `product-owner` | Strategy, backlog, MVP | plan-writing, brainstorming |
-| `qa-automation-engineer` | E2E testing, CI pipelines | webapp-testing, testing-patterns |
-| `code-archaeologist` | Legacy code, refactoring | clean-code, code-review-checklist |
-| `explorer-agent` | Codebase analysis | - |
+|-------|-------|-------------|
+| `go-developer` | Go/Golang backend | go-patterns, Gin/Chi/Fiber |
+| `java-developer` | Java/JVM backend | java-expert, Spring Boot |
+| `dotnet-developer` | .NET/C# backend | dotnet-expert, ASP.NET Core |
+| `kotlin-developer` | Kotlin backend/Android | kotlin-expert, Ktor, Compose |
+| `ruby-developer` | Ruby/Rails backend | ruby-patterns, Rails 7 |
+| `php-developer` | PHP/Laravel backend | php-patterns, Laravel |
+| `cpp-developer` | C++ systems programming | cpp-modern |
 
-## 🧩 Skills (36)
+---
 
-Modular knowledge domains that agents can load on-demand based on task context:
+## 🧩 Skills (49)
 
-### Frontend & UI
-- `react-best-practices` - React & Next.js performance optimization
-- `web-design-guidelines` - Web UI audit for accessibility, UX, performance
-- `tailwind-patterns` - Tailwind CSS v4 utilities
-- `frontend-design` - UI/UX patterns, design systems
-- `ui-ux-pro-max` - 50 styles, 21 palettes, 50 fonts
+### 🎯 Language-Agnostic Skills (REFACTORIZED)
+- `clean-code` - Language-agnostic coding standards
+- `lint-and-validate` - Multi-language linting
+- `code-review-checklist` - Language-adaptive code review
+- `systematic-debugging` - Debugging per language
+- `naming-conventions` - Complete reference table by language
 
-### Backend & API
-- `api-patterns` - REST, GraphQL, tRPC
-- `nestjs-expert` - NestJS modules, DI, decorators
-- `nodejs-best-practices` - Node.js async, modules
-- `python-patterns` - Python standards, FastAPI
+### 🐍 Backend & API Skills
+- `nestjs-expert` - NestJS 10+, TypeORM, JWT Auth
+- `django-patterns` - Django 4.2+, DRF, Celery
+- `go-patterns` - Go 1.22+, Gin/Chi/Fiber
+- `java-expert` - Java 21+, Spring Boot
+- `dotnet-expert` - .NET 8, C# 12
+- `kotlin-expert` - Kotlin 2.0+, Ktor
+- `php-patterns` - PHP 8.3, Laravel
+- `ruby-patterns` - Ruby 3.3+, Rails 7
+- `kotlin-expert` - Kotlin 2.0+, Ktor, coroutines
+- `php-patterns` - PHP 8.3, Laravel 11, PSR standards
+- `ruby-patterns` - Ruby 3.3+, Rails 7, Hotwire
 
-### Database
+### 🦀 Systems & Mobile
+- `rust-pro` - Rust 1.75+, Tokio, Axum
+- `cpp-modern` - C++23/26, RAII, concepts
+- `swift-expert` - Swift 5.9+, SwiftUI, async/await
+- `kotlin-expert` - Kotlin multiplatform
+
+### 🕸️ Web & Frontend (Original)
+- `react-best-practices` - React & Next.js performance
+- `web-design-guidelines` - Web UI audit
+- `tailwind-patterns` - Tailwind CSS v4
+- `nodejs-best-practices` - Node.js async
+
+### 🗄️ Database
 - `database-design` - Schema design, optimization
-- `prisma-expert` - Prisma ORM, migrations
+- `prisma-expert` - Prisma ORM
 
-### TypeScript/JavaScript
-- `typescript-expert` - Type-level programming, performance
-
-### Cloud & Infrastructure
-- `docker-expert` - Containerization, Compose
-- `deployment-procedures` - CI/CD, deploy workflows
-- `server-management` - Infrastructure management
-
-### Testing & Quality
-- `testing-patterns` - Jest, Vitest, strategies
+### 🛡️ Quality & Security
+- `testing-patterns` - Test strategies
 - `webapp-testing` - E2E, Playwright
-- `tdd-workflow` - Test-driven development
-- `code-review-checklist` - Code review standards
-- `lint-and-validate` - Linting, validation
+- `vulnerability-scanner` - Security auditing
+- `code-review-checklist` - Code review
 
-### Security
-- `vulnerability-scanner` - Security auditing, OWASP
-- `red-team-tactics` - Offensive security
+---
 
-### Architecture & Planning
-- `app-builder` - Full-stack app scaffolding
-- `architecture` - System design patterns
-- `plan-writing` - Task planning, breakdown
-- `brainstorming` - Socratic questioning
+## 📦 App Builder Templates (27)
 
-### Mobile
-- `mobile-design` - Mobile UI/UX patterns
+### 🆕 Enterprise Backend
+| Template | Stack | Use Case |
+|----------|-------|----------|
+| `nestjs-api` | NestJS + TypeORM | Enterprise Node.js APIs |
+| `django-app` | Django 4 + DRF | Full Python web apps |
+| `sveltekit-app` | SvelteKit 2 + Prisma | Modern Svelte apps |
 
-### Game Development
-- `game-development` - Game logic, mechanics
+### Multi-Language Templates
+| Template | Stack | Use Case |
+|----------|-------|----------|
+| `go-gin-api` | Go + Gin | High-performance APIs |
+| `go-fiber-api` | Go + Fiber | Fastest Go web framework |
+| `spring-boot-api` | Java + Spring Boot 3 | Enterprise APIs |
+| `ktor-api` | Kotlin + Ktor | Lightweight async APIs |
+| `aspnet-core-api` | .NET 8 + Minimal APIs | Modern .NET APIs |
+| `rails-app` | Ruby + Rails 7 | Full-stack Rails |
+| `laravel-app` | PHP + Laravel 11 | Modern PHP apps |
+| `rust-axum-api` | Rust + Axum | High-performance Rust APIs |
+| `swiftui-app` | Swift + SwiftUI | iOS/macOS apps |
+| `kotlin-android` | Kotlin + Jetpack Compose | Android apps |
 
-### SEO & Growth
-- `seo-fundamentals` - SEO, E-E-A-T, Core Web Vitals
-- `geo-fundamentals` - GenAI optimization
+### JavaScript/Frontend
+- `nextjs-fullstack` / `nextjs-saas` / `nextjs-static`
+- `nuxt-app` / `astro-static` / `sveltekit-app`
+- `express-api` / `react-native-app`
+- `flutter-app` / `electron-desktop`
 
-### Shell/CLI
-- `bash-linux` - Linux commands, scripting
-- `powershell-windows` - Windows PowerShell
+### Python & Others
+- `python-fastapi` / `django-app`
+- `monorepo-turborepo` / `cli-tool` / `chrome-extension`
 
-### Other
-- `clean-code` - Coding standards (Global)
-- `behavioral-modes` - Agent personas
-- `parallel-agents` - Multi-agent patterns
-- `mcp-builder` - Model Context Protocol
-- `documentation-templates` - Doc formats
-- `i18n-localization` - Internationalization
-- `performance-profiling` - Web Vitals, optimization
-- `systematic-debugging` - Troubleshooting
+---
 
-## ⚡ Workflows (11)
+## 🚀 GitHub Actions CI/CD
 
-Slash command procedures that can be invoked with `/command`:
+Automated CI/CD pipelines for all major languages:
 
-| Command | Description |
-|---------|-------------|
-| `/brainstorm` | Socratic discovery |
-| `/create` | Create new features |
-| `/debug` | Debug issues |
-| `/deploy` | Deploy application |
-| `/enhance` | Improve existing code |
-| `/orchestrate` | Multi-agent coordination |
-| `/plan` | Task breakdown |
-| `/preview` | Preview changes |
-| `/status` | Check project status |
-| `/test` | Run tests |
-| `/ui-ux-pro-max` | Design with 50 styles |
+| Workflow | Language | Features |
+|----------|----------|----------|
+| `go-ci.yml` | Go 1.22+ | Tests, lint, docker |
+| `java-ci.yml` | Java 21 | Maven, security |
+| `dotnet-ci.yml` | .NET 8 | Tests, security |
+| `python-ci.yml` | Python 3.11 | pytest, coverage, ruff |
+| `nodejs-ci.yml` | Node.js 20 | npm test, lint |
+
+---
+
+## 🌟 Example: Building a Multi-Language Project
+
+### Go Backend
+```bash
+opencode run "Create a REST API with Go and Gin" --agent go-developer
+```
+
+### Java Spring Boot
+```bash
+opencode run "Build a todo API with Spring Boot" --agent java-developer
+```
+
+### .NET Minimal API
+```bash
+opencode run "Create a minimal API with .NET 8" --agent dotnet-developer
+```
+
+### Laravel PHP
+```bash
+opencode run "Build a blog with Laravel" --agent php-developer
+```
+
+### Ruby on Rails
+```bash
+opencode run "Create a task manager with Rails 7" --agent ruby-developer
+```
+
+---
+
+## 🔄 Language-Agnostic Code Conventions
+
+The kit **automatically adapts** to the language being used. See `naming-conventions` skill:
+
+| Language | Methods | Constants | Classes | Files |
+|----------|---------|-----------|---------|-------|
+| **Python** | snake_case | UPPER_SNAKE_CASE | PascalCase | snake_case |
+| **C#/.NET** | PascalCase | PascalCase | PascalCase | PascalCase |
+| **Go** | PascalCase (export) | UPPER_SNAKE_CASE | PascalCase | snake_case |
+| **Rust** | snake_case | UPPER_SNAKE_CASE | PascalCase | snake_case |
+| **JavaScript** | camelCase | UPPER_SNAKE_CASE | PascalCase | kebab-case |
+| **Ruby** | snake_case | UPPER_SNAKE_CASE | PascalCase | snake_case |
+| **PHP** | camelCase | UPPER_SNAKE_CASE | PascalCase | kebab-case |
+| **Swift** | camelCase | UPPER_SNAKE_CASE | PascalCase | snake_case |
+| **Kotlin** | camelCase | UPPER_SNAKE_CASE | PascalCase | kebab-case |
+| **Java** | camelCase | UPPER_SNAKE_CASE | PascalCase | kebab-case |
+
+---
+
+## 🐍 Validation Scripts
+
+### Multi-Language Linting
+```bash
+# Auto-detects language and runs appropriate linter
+python .opencode/scripts/linters/lint_runner.py ./project
+```
+
+Supports: Python (Ruff), Go (go vet/golangci-lint), Rust (cargo clippy), JavaScript/TypeScript (ESLint), Java (Checkstyle)
+
+### Multi-Language Testing
+```bash
+# Auto-detects language and runs tests
+python .opencode/scripts/testrunners/test_runner_multi.py ./project
+```
+
+Supports: Python (pytest), Go (go test), Rust (cargo test), JavaScript (Jest), Java/Maven, Ruby (RSpec), .NET (dotnet test)
+
+---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-
-- Opencode installed on your system
+- Opencode installed
 - Node.js (for running validation scripts)
-- Python 3.x (for running validation scripts)
+- Python 3.x (for scripts)
+- Language-specific tooling (Go, Java, .NET, etc.)
 
-### Installation
-
-1. Clone this repository to your local machine
-2. Ensure the `.opencode` directory is in your project root
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-### Using Agents
-
-To invoke a specific agent for a task:
-
+### Using Multi-Language Agents
 ```bash
-opencode run --agent frontend-specialist "Create a responsive navbar component"
+opencode run "Build a user API with Go" --agent go-developer
+opencode run "Create a Spring Boot service" --agent java-developer
+opencode run "Build an ASP.NET Core API" --agent dotnet-developer
 ```
 
-Or specify the agent in your prompt:
-
+### Using Templates
 ```bash
-opencode run "I need help designing a database schema for an e-commerce application" --agent database-architect
+opencode run "/create Build a Go Gin API" --skill app-builder
+opencode run "/create Build a Rails 7 app" --skill app-builder
+opencode run "/create Build a Laravel 11 API" --skill app-builder
 ```
-
-### Using Workflows
-
-Invoke workflows with slash commands:
-
-```bash
-opencode run "/plan Create a user authentication system"
-```
-
-```bash
-opencode run "/debug Fix the login error on the staging environment"
-```
-
-```bash
-opencode run "/test Run all unit tests and generate coverage report"
-```
-
-## 🌟 Example: Creating a Modern Web Application
-
-Let's see how to use the Antigravity Kit to build a modern web application with great UI:
-
-### 1. Planning Phase
-```bash
-opencode run "/plan Build a task management app with React, Node.js, and PostgreSQL"
-```
-
-### 2. Architecture Design
-```bash
-opencode run --agent project-planner "Design a scalable architecture for the task app"
-```
-
-### 3. UI/UX Design with Beautiful Components
-```bash
-opencode run --agent frontend-specialist "Create a modern dashboard with dark/light mode using Tailwind CSS and shadcn/ui components"
-```
-
-### 4. Backend API Development
-```bash
-opencode run --agent backend-specialist "Build REST APIs for task CRUD operations with JWT authentication"
-```
-
-### 5. Database Design
-```bash
-opencode run --agent database-architect "Design PostgreSQL schema for users, tasks, and categories"
-```
-
-### 6. Testing Strategy
-```bash
-opencode run --agent test-engineer "Create comprehensive test plan including unit, integration, and E2E tests"
-```
-
-### 7. Security Audit
-```bash
-opencode run --agent security-auditor "Perform security audit focusing on OWASP Top 10 vulnerabilities"
-```
-
-### 8. Performance Optimization
-```bash
-opencode run --agent performance-optimizer "Optimize Core Web Vitals and bundle size"
-```
-
-### 9. Deployment Preparation
-```bash
-opencode run --agent devops-engineer "Set up CI/CD pipeline with Docker and deployment to Vercel/Netlify"
-```
-
-## 🔄 Skill Loading Protocol
-
-Agents automatically load relevant skills based on task context:
-
-```
-User Request → Skill Description Match → Load SKILL.md
-                                              ↓
-                                      Read references/
-                                              ↓
-                                      Read scripts/
-```
-
-## 🐍 Validation Scripts
-
-The kit includes master validation scripts for code quality assurance:
-
-### Quick Validation (Development)
-```bash
-python .opencode/scripts/checklist.py .
-```
-
-### Comprehensive Validation (Pre-deployment)
-```bash
-python .opencode/scripts/verify_all.py . --url http://localhost:3000
-```
-
-## 🔌 Configuration
-
-### MCP Servers
-
-The kit includes pre-configured MCP (Model Context Protocol) servers in `.opencode/mcp_config.json`:
-
-- **Context7** 📚 - For up-to-date documentation
-- **Shadcn** 🎨 - For UI component generation
-- **Netlify** ☁️ - For deployment capabilities
-
-To use these servers, you'll need to provide your API keys in the configuration file.
-
-## 🏆 Best Practices
-
-1. **Always clarify requirements first** ❓ - Agents are designed to ask clarifying questions before proceeding with implementation
-2. **Use the right agent for the task** 🎯 - Match the agent specialty to your specific need
-3. **Leverage workflows for repeatable tasks** 🔁 - Slash commands streamline common development procedures
-4. **Run validation regularly** ✅ - Use the checklist script during development and verify_all before deployment
-5. **Combine agents for complex tasks** 🤝 - Use the orchestrator agent for multi-faceted problems requiring different expertise
-
-## 🛠️ Customization
-
-You can extend the kit by:
-- Adding new agent definitions to `.opencode/agents/`
-- Creating new skill directories in `.opencode/skills/`
-- Adding custom workflows to `.opencode/workflows/`
-- Modifying validation scripts in `.opencode/scripts/`
-
-## 📜 License
-
-This kit is adapted from the Antigravity Kit and is available for use with Opencode.
-
-## 🤝 Support
-
-For issues or questions, please refer to the documentation in each agent's markdown file or consult the ARCHITECTURE.md for detailed information about each component.
 
 ---
 
-> **Star this repo** ⭐ if you find it useful! Share with your developer friends and help build better AI-assisted development workflows!
+## 🔌 MCP Servers
+
+The kit includes pre-configured MCP servers:
+
+- **Context7** - For up-to-date documentation
+- **Shadcn** - For UI component generation
+- **Netlify** - For deployment capabilities
+
+---
+
+## 🏆 Best Practices
+
+1. **Let the agent detect language** - Say "build an API" without specifying the language, and the appropriate agent will be selected
+2. **Use language-agnostic skills** - `clean-code` and `naming-conventions` adapt automatically
+3. **Use the right agent for your language** - Each language has a dedicated specialist
+4. **Run validations** - Use the multi-language lint and test scripts
+5. **Leverage templates** - App-builder generates complete project scaffolding
+
+---
+
+## 🛠️ Extending the Kit
+
+You can extend by:
+- Adding new skills to `.opencode/skills/`
+- Creating new agents in `.opencode/agents/`
+- Adding templates to `.opencode/skills/app-builder/templates/`
+- Customizing scripts in `.opencode/scripts/`
+
+---
+
+## 📜 License
+
+Adapted from the Antigravity Kit for use with Opencode.
+
+---
+
+## 🤝 Support
+
+For questions, check:
+- `ARCHITECTURE.md` - Complete system documentation
+- Individual skill `SKILL.md` files
+- Agent descriptions in `agents/`
+
+---
+
+> ⭐ **Star this repo** if you find it useful! Now with full multi-language support.

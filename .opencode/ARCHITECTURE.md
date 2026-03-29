@@ -1,6 +1,6 @@
 # Antigravity Kit Architecture
 
-> Comprehensive AI Agent Capability Expansion Toolkit
+> Comprehensive AI Agent Capability Expansion Toolkit - MULTI-LANGUAGE EDITION
 
 ---
 
@@ -8,281 +8,343 @@
 
 Antigravity Kit is a modular system consisting of:
 
-- **20 Specialist Agents** - Role-based AI personas
-- **36 Skills** - Domain-specific knowledge modules
+- **27 Specialist Agents** - Role-based AI personas
+- **49 Skills** - Domain-specific knowledge modules
+- **27 Templates** - Multi-stack app scaffolding
 - **11 Workflows** - Slash command procedures
+- **5 GitHub Actions CI/CD** - Multi-language CI/CD pipelines
 
 ---
 
 ## 🏗️ Directory Structure
 
 ```plaintext
-.agent/
+.opencode/
 ├── ARCHITECTURE.md          # This file
-├── agents/                  # 20 Specialist Agents
-├── skills/                  # 36 Skills
+├── agents/                  # 27 Specialist Agents
+├── skills/                  # 49 Skills (multi-language)
 ├── workflows/               # 11 Slash Commands
+├── .github/workflows/       # 5 CI/CD Pipelines
 ├── rules/                   # Global Rules
-└── scripts/                 # Master Validation Scripts
+└── scripts/                 # Validation & Linting Scripts
+    ├── linters/             # Multi-language linting
+    └── testrunners/         # Multi-language testing
 ```
 
 ---
 
-## 🤖 Agents (20)
+## 🤖 Agents (27)
 
-Specialist AI personas for different domains.
+### Original Agents (20)
+| Agent | Focus | Skills Used |
+|-------|-------|-------------|
+| `orchestrator` | Multi-agent coordination | parallel-agents, behavioral-modes |
+| `project-planner` | Discovery, task planning | brainstorming, plan-writing, architecture |
+| `frontend-specialist` | Web UI/UX | frontend-design, react-best-practices, tailwind-patterns |
+| `backend-specialist` | API, business logic | api-patterns, nodejs-best-practices, database-design |
+| `database-architect` | Schema, SQL | database-design, prisma-expert |
+| `mobile-developer` | iOS, Android, RN | mobile-design |
+| `game-developer` | Game logic, mechanics | game-development |
+| `devops-engineer` | CI/CD, Docker | deployment-procedures, docker-expert |
+| `security-auditor` | Security compliance | vulnerability-scanner, red-team-tactics |
+| `penetration-tester` | Offensive security | red-team-tactics |
+| `test-engineer` | Testing strategies | testing-patterns, tdd-workflow, webapp-testing |
+| `debugger` | Root cause analysis | systematic-debugging |
+| `performance-optimizer` | Speed, Web Vitals | performance-profiling |
+| `seo-specialist` | Ranking, visibility | seo-fundamentals, geo-fundamentals |
+| `documentation-writer` | Manuals, docs | documentation-templates |
+| `product-manager` | Requirements, user stories | plan-writing, brainstorming |
+| `product-owner` | Strategy, backlog, MVP | plan-writing, brainstorming |
+| `qa-automation-engineer` | E2E testing, CI pipelines | webapp-testing, testing-patterns |
+| `code-archaeologist` | Legacy code, refactoring | clean-code, code-review-checklist |
+| `explorer-agent` | Codebase analysis | - |
 
-| Agent                    | Focus                      | Skills Used                                              |
-| ------------------------ | -------------------------- | -------------------------------------------------------- |
-| `orchestrator`           | Multi-agent coordination   | parallel-agents, behavioral-modes                        |
-| `project-planner`        | Discovery, task planning   | brainstorming, plan-writing, architecture                |
-| `frontend-specialist`    | Web UI/UX                  | frontend-design, react-best-practices, tailwind-patterns |
-| `backend-specialist`     | API, business logic        | api-patterns, nodejs-best-practices, database-design     |
-| `database-architect`     | Schema, SQL                | database-design, prisma-expert                           |
-| `mobile-developer`       | iOS, Android, RN           | mobile-design                                            |
-| `game-developer`         | Game logic, mechanics      | game-development                                         |
-| `devops-engineer`        | CI/CD, Docker              | deployment-procedures, docker-expert                     |
-| `security-auditor`       | Security compliance        | vulnerability-scanner, red-team-tactics                  |
-| `penetration-tester`     | Offensive security         | red-team-tactics                                         |
-| `test-engineer`          | Testing strategies         | testing-patterns, tdd-workflow, webapp-testing           |
-| `debugger`               | Root cause analysis        | systematic-debugging                                     |
-| `performance-optimizer`  | Speed, Web Vitals          | performance-profiling                                    |
-| `seo-specialist`         | Ranking, visibility        | seo-fundamentals, geo-fundamentals                       |
-| `documentation-writer`   | Manuals, docs              | documentation-templates                                  |
-| `product-manager`        | Requirements, user stories | plan-writing, brainstorming                              |
-| `product-owner`          | Strategy, backlog, MVP     | plan-writing, brainstorming                              |
-| `qa-automation-engineer` | E2E testing, CI pipelines  | webapp-testing, testing-patterns                         |
-| `code-archaeologist`     | Legacy code, refactoring   | clean-code, code-review-checklist                        |
-| `explorer-agent`         | Codebase analysis          | -                                                        |
+### NEW: Multi-Language Agents (7)
+| Agent | Focus | Skills Used |
+|-------|-------|-------------|
+| `go-developer` | Go/Golang development | go-patterns, go-concurrency |
+| `java-developer` | Java/JVM development | java-expert, spring-boot |
+| `dotnet-developer` | .NET/C# development | dotnet-expert, aspnet-core |
+| `kotlin-developer` | Kotlin/Android development | kotlin-expert, android-compose |
+| `ruby-developer` | Ruby/Rails development | ruby-patterns, rails-patterns |
+| `php-developer` | PHP/Laravel development | php-patterns, laravel-patterns |
+| `cpp-developer` | C++ development | cpp-modern, systems-programming |
 
 ---
 
-## 🧩 Skills (36)
+## 🧩 Skills (47)
 
-Modular knowledge domains that agents can load on-demand. based on task context.
-
-### Frontend & UI
-
-| Skill                   | Description                                                           |
-| ----------------------- | --------------------------------------------------------------------- |
-| `react-best-practices`  | React & Next.js performance optimization (Vercel - 57 rules)          |
-| `web-design-guidelines` | Web UI audit - 100+ rules for accessibility, UX, performance (Vercel) |
-| `tailwind-patterns`     | Tailwind CSS v4 utilities                                             |
-| `frontend-design`       | UI/UX patterns, design systems                                        |
-| `ui-ux-pro-max`         | 50 styles, 21 palettes, 50 fonts                                      |
+### Language-Agnostic Skills (REFACTORIZED)
+| Skill | Description |
+|-------|-------------|
+| `clean-code` | Coding standards - NOW LANGUAGE-AGNOSTIC |
+| `lint-and-validate` | Multi-language linting |
+| `code-review-checklist` | Code review with language-adaptive conventions |
+| `systematic-debugging` | Debugging tools by language |
+| `naming-conventions` | **NEW** - Complete naming convention table by language |
 
 ### Backend & API
+| Skill | Description |
+|-------|-------------|
+| `api-patterns` | REST, GraphQL, tRPC |
+| `nestjs-expert` | NestJS 10+, TypeORM, JWT |
+| `nodejs-best-practices` | Node.js async, modules |
+| `python-patterns` | Python 3.11+, FastAPI |
+| `django-patterns` | **NEW** - Django 4.2+, DRF, Celery |
+| `go-patterns` | **NEW** - Go 1.22+, Gin/Chi/Fiber |
+| `java-expert` | **NEW** - Java 21+, Spring Boot |
+| `dotnet-expert` | **NEW** - .NET 8, C# 12, Minimal APIs |
+| `kotlin-expert` | **NEW** - Kotlin 2.0+, Ktor |
+| `php-patterns` | **NEW** - PHP 8.3, Laravel/Symfony |
+| `ruby-patterns` | **NEW** - Ruby 3.3+, Rails 7 |
+| `rust-pro` | Rust 1.75+, Tokio, Axum |
 
-| Skill                   | Description                    |
-| ----------------------- | ------------------------------ |
-| `api-patterns`          | REST, GraphQL, tRPC            |
-| `nestjs-expert`         | NestJS modules, DI, decorators |
-| `nodejs-best-practices` | Node.js async, modules         |
-| `python-patterns`       | Python standards, FastAPI      |
-
-### Database
-
-| Skill             | Description                 |
-| ----------------- | --------------------------- |
-| `database-design` | Schema design, optimization |
-| `prisma-expert`   | Prisma ORM, migrations      |
-
-### TypeScript/JavaScript
-
-| Skill               | Description                         |
-| ------------------- | ----------------------------------- |
-| `typescript-expert` | Type-level programming, performance |
-
-### Cloud & Infrastructure
-
-| Skill                   | Description               |
-| ----------------------- | ------------------------- |
-| `docker-expert`         | Containerization, Compose |
-| `deployment-procedures` | CI/CD, deploy workflows   |
-| `server-management`     | Infrastructure management |
-
-### Testing & Quality
-
-| Skill                   | Description              |
-| ----------------------- | ------------------------ |
-| `testing-patterns`      | Jest, Vitest, strategies |
-| `webapp-testing`        | E2E, Playwright          |
-| `tdd-workflow`          | Test-driven development  |
-| `code-review-checklist` | Code review standards    |
-| `lint-and-validate`     | Linting, validation      |
-
-### Security
-
-| Skill                   | Description              |
-| ----------------------- | ------------------------ |
-| `vulnerability-scanner` | Security auditing, OWASP |
-| `red-team-tactics`      | Offensive security       |
-
-### Architecture & Planning
-
-| Skill           | Description                |
-| --------------- | -------------------------- |
-| `app-builder`   | Full-stack app scaffolding |
-| `architecture`  | System design patterns     |
-| `plan-writing`  | Task planning, breakdown   |
-| `brainstorming` | Socratic questioning       |
-
-### Mobile
-
-| Skill           | Description           |
-| --------------- | --------------------- |
+### Mobile & Desktop
+| Skill | Description |
+|-------|-------------|
 | `mobile-design` | Mobile UI/UX patterns |
+| `swift-expert` | **NEW** - Swift 5.9+, SwiftUI |
 
 ### Game Development
-
-| Skill              | Description           |
-| ------------------ | --------------------- |
+| Skill | Description |
+|-------|-------------|
 | `game-development` | Game logic, mechanics |
 
-### SEO & Growth
+### Systems & Low-Level
+| Skill | Description |
+|-------|-------------|
+| `cpp-modern` | **NEW** - C++23/26, RAII, Concepts |
 
-| Skill              | Description                   |
-| ------------------ | ----------------------------- |
-| `seo-fundamentals` | SEO, E-E-A-T, Core Web Vitals |
-| `geo-fundamentals` | GenAI optimization            |
+### Database
+| Skill | Description |
+|-------|-------------|
+| `database-design` | Schema design, optimization |
+| `prisma-expert` | Prisma ORM, migrations |
+
+### Frontend & UI
+| Skill | Description |
+|-------|-------------|
+| `react-best-practices` | React & Next.js performance |
+| `web-design-guidelines` | Web UI audit |
+| `tailwind-patterns` | Tailwind CSS v4 |
+| `frontend-design` | UI/UX patterns |
+| `ui-ux-pro-max` | 50 styles, 21 palettes |
+
+### Cloud & Infrastructure
+| Skill | Description |
+|-------|-------------|
+| `deployment-procedures` | CI/CD, deploy workflows |
+| `server-management` | Infrastructure management |
+
+### Testing & Quality
+| Skill | Description |
+|-------|-------------|
+| `testing-patterns` | Jest, Vitest, pytest |
+| `webapp-testing` | E2E, Playwright |
+| `tdd-workflow` | Test-driven development |
+
+### Security
+| Skill | Description |
+|-------|-------------|
+| `vulnerability-scanner` | Security auditing, OWASP |
+| `red-team-tactics` | Offensive security |
+
+### Architecture & Planning
+| Skill | Description |
+|-------|-------------|
+| `app-builder` | Full-stack app scaffolding |
+| `architecture` | System design patterns |
+| `plan-writing` | Task planning, breakdown |
+| `brainstorming` | Socratic questioning |
 
 ### Shell/CLI
+| Skill | Description |
+|-------|-------------|
+| `bash-linux` | Linux commands, scripting |
+| `powershell-windows` | Windows PowerShell |
 
-| Skill                | Description               |
-| -------------------- | ------------------------- |
-| `bash-linux`         | Linux commands, scripting |
-| `powershell-windows` | Windows PowerShell        |
+### SEO & Growth
+| Skill | Description |
+|-------|-------------|
+| `seo-fundamentals` | SEO, E-E-A-T, Core Web Vitals |
+| `geo-fundamentals` | GenAI optimization |
 
-### Other
+### Documentation & Tools
+| Skill | Description |
+|-------|-------------|
+| `mcp-builder` | Model Context Protocol |
+| `documentation-templates` | Doc formats |
+| `i18n-localization` | Internationalization |
+| `performance-profiling` | Web Vitals, optimization |
+| `code-review-checklist` | Code review |
 
-| Skill                     | Description               |
-| ------------------------- | ------------------------- |
-| `clean-code`              | Coding standards (Global) |
-| `behavioral-modes`        | Agent personas            |
-| `parallel-agents`         | Multi-agent patterns      |
-| `mcp-builder`             | Model Context Protocol    |
-| `documentation-templates` | Doc formats               |
-| `i18n-localization`       | Internationalization      |
-| `performance-profiling`   | Web Vitals, optimization  |
-| `systematic-debugging`    | Troubleshooting           |
+---
+
+## 📦 App Builder Templates (27)
+
+### JavaScript/TypeScript (10)
+- `nextjs-fullstack` - Next.js fullstack
+- `nextjs-saas` - Next.js SaaS
+- `nextjs-static` - Next.js static
+- `nuxt-app` - Nuxt 3 + Pinia
+- `sveltekit-app` - **NEW** - SvelteKit 2 + Prisma
+- `express-api` - Express.js API
+- `react-native-app` - React Native
+- `flutter-app` - Flutter mobile
+- `electron-desktop` - Electron desktop
+- `chrome-extension` - Chrome extension
+
+### Python (2)
+- `python-fastapi` - FastAPI + SQLAlchemy
+- `django-app` - **NEW** - Django 4 + DRF + Celery
+
+### Go (2)
+- `go-gin-api` - Go + Gin API
+- `go-fiber-api` - Go + Fiber API
+
+### Java (1)
+- `spring-boot-api` - Spring Boot 3 + JPA
+
+### .NET (1)
+- `aspnet-core-api` - .NET 8 + Minimal APIs
+
+### PHP (1)
+- `laravel-app` - Laravel 11
+
+### Ruby (1)
+- `rails-app` - Rails 7 + Hotwire
+
+### Rust (1)
+- `rust-axum-api` - Rust + Axum
+
+### Kotlin (1)
+- `kotlin-android` - Kotlin + Jetpack Compose
+
+### Swift (1)
+- `swiftui-app` - Swift + SwiftUI
+
+### Others (3)
+- `astro-static` - Astro static
+- `cli-tool` - CLI tool
+- `monorepo-turborepo` - Turborepo monorepo
 
 ---
 
 ## 🔄 Workflows (11)
 
-Slash command procedures. Invoke with `/command`.
-
-| Command          | Description              |
-| ---------------- | ------------------------ |
-| `/brainstorm`    | Socratic discovery       |
-| `/create`        | Create new features      |
-| `/debug`         | Debug issues             |
-| `/deploy`        | Deploy application       |
-| `/enhance`       | Improve existing code    |
-| `/orchestrate`   | Multi-agent coordination |
-| `/plan`          | Task breakdown           |
-| `/preview`       | Preview changes          |
-| `/status`        | Check project status     |
-| `/test`          | Run tests                |
-| `/ui-ux-pro-max` | Design with 50 styles    |
+| Command | Description |
+|---------|-------------|
+| `/brainstorm` | Socratic discovery |
+| `/create` | Create new features |
+| `/debug` | Debug issues |
+| `/deploy` | Deploy application |
+| `/enhance` | Improve existing code |
+| `/orchestrate` | Multi-agent coordination |
+| `/plan` | Task breakdown |
+| `/preview` | Preview changes |
+| `/status` | Check project status |
+| `/test` | Run tests |
+| `/ui-ux-pro-max` | Design with 50 styles |
 
 ---
 
-## 🎯 Skill Loading Protocol
+## 🎯 Language-Specific Conventions
 
-```plaintext
-User Request → Skill Description Match → Load SKILL.md
-                                            ↓
-                                    Read references/
-                                            ↓
-                                    Read scripts/
-```
+The kit now **automatically adapts** to the language being used:
 
-### Skill Structure
-
-```plaintext
-skill-name/
-├── SKILL.md           # (Required) Metadata & instructions
-├── scripts/           # (Optional) Python/Bash scripts
-├── references/        # (Optional) Templates, docs
-└── assets/            # (Optional) Images, logos
-```
-
-### Enhanced Skills (with scripts/references)
-
-| Skill               | Files | Coverage                            |
-| ------------------- | ----- | ----------------------------------- |
-| `ui-ux-pro-max`     | 27    | 50 styles, 21 palettes, 50 fonts    |
-| `app-builder`       | 20    | Full-stack scaffolding              |
+| Language | Methods | Constants | Classes | Files |
+|----------|---------|-----------|---------|-------|
+| **Python** | snake_case | UPPER_SNAKE_CASE | PascalCase | snake_case |
+| **C#/.NET** | PascalCase | PascalCase | PascalCase | PascalCase |
+| **Go** | PascalCase | UPPER_SNAKE_CASE | PascalCase | snake_case |
+| **Rust** | snake_case | UPPER_SNAKE_CASE | PascalCase | snake_case |
+| **JavaScript** | camelCase | UPPER_SNAKE_CASE | PascalCase | kebab-case |
+| **Ruby** | snake_case | UPPER_SNAKE_CASE | PascalCase | snake_case |
+| **PHP** | camelCase | UPPER_SNAKE_CASE | PascalCase | kebab-case |
+| **Swift** | camelCase | UPPER_SNAKE_CASE | PascalCase | snake_case |
+| **Kotlin** | camelCase | UPPER_SNAKE_CASE | PascalCase | kebab-case |
+| **Java** | camelCase | UPPER_SNAKE_CASE | PascalCase | kebab-case |
 
 ---
 
-## � Scripts (2)
+## 🔧 Multi-Language Scripts
 
-Master validation scripts that orchestrate skill-level scripts.
+### Linting Scripts
+| Script | Languages Supported |
+|--------|---------------------|
+| `lint_runner.py` | Python, Go, Rust, JS/TS, Java |
 
-### Master Scripts
+### Test Scripts
+| Script | Languages Supported |
+|--------|---------------------|
+| `test_runner_multi.py` | Python (pytest), Go (go test), Rust (cargo test), Java (mvn/junit), JS (Jest) |
 
-| Script          | Purpose                                 | When to Use              |
-| --------------- | --------------------------------------- | ------------------------ |
-| `checklist.py`  | Priority-based validation (Core checks) | Development, pre-commit  |
-| `verify_all.py` | Comprehensive verification (All checks) | Pre-deployment, releases |
+---
 
-### Usage
+---
 
-```bash
-# Quick validation during development
-python .agent/scripts/checklist.py .
+## 🚀 GitHub Actions CI/CD Pipelines (5)
 
-# Full verification before deployment
-python .agent/scripts/verify_all.py . --url http://localhost:3000
-```
+Automated CI/CD workflows for multi-language projects:
 
-### What They Check
-
-**checklist.py** (Core checks):
-
-- Security (vulnerabilities, secrets)
-- Code Quality (lint, types)
-- Schema Validation
-- Test Suite
-- UX Audit
-- SEO Check
-
-**verify_all.py** (Full suite):
-
-- Everything in checklist.py PLUS:
-- Lighthouse (Core Web Vitals)
-- Playwright E2E
-- Bundle Analysis
-- Mobile Audit
-- i18n Check
-
-For details, see [scripts/README.md](scripts/README.md)
+| Workflow | Language | Features |
+|----------|----------|----------|
+| `go-ci.yml` | Go 1.22+ | Tests, lint, docker build |
+| `java-ci.yml` | Java 21 | Maven, security scan |
+| `dotnet-ci.yml` | .NET 8 | Tests, security analysis |
+| `python-ci.yml` | Python 3.11 | pytest, coverage, ruff |
+| `nodejs-ci.yml` | Node.js 20 | npm test, lint, build |
 
 ---
 
 ## 📊 Statistics
 
-| Metric              | Value                         |
-| ------------------- | ----------------------------- |
-| **Total Agents**    | 20                            |
-| **Total Skills**    | 36                            |
-| **Total Workflows** | 11                            |
-| **Total Scripts**   | 2 (master) + 18 (skill-level) |
-| **Coverage**        | ~90% web/mobile development   |
+| Metric | Value |
+|--------|-------|
+| **Total Agents** | 27 |
+| **Total Skills** | 49 |
+| **Total Templates** | 27 |
+| **Total Workflows** | 11 |
+| **CI/CD Pipelines** | 5 |
+| **Languages Supported** | 12+ (Go, Java, .NET, Kotlin, PHP, Ruby, C++, Swift, Python, Rust, JS/TS) |
+| **Coverage** | Full multi-language development |
 
 ---
 
 ## 🔗 Quick Reference
 
-| Need     | Agent                 | Skills                                |
-| -------- | --------------------- | ------------------------------------- |
-| Web App  | `frontend-specialist` | react-best-practices, frontend-design |
-| API      | `backend-specialist`  | api-patterns, nodejs-best-practices   |
-| Mobile   | `mobile-developer`    | mobile-design                         |
-| Database | `database-architect`  | database-design, prisma-expert        |
-| Security | `security-auditor`    | vulnerability-scanner                 |
-| Testing  | `test-engineer`       | testing-patterns, webapp-testing      |
-| Debug    | `debugger`            | systematic-debugging                  |
-| Plan     | `project-planner`     | brainstorming, plan-writing           |
+| Need | Agent | Skills |
+|------|-------|--------|
+| Python API | (use python-patterns) | python-patterns, fastapi |
+| Go API | `go-developer` | go-patterns |
+| Java API | `java-developer` | java-expert |
+| .NET API | `dotnet-developer` | dotnet-expert |
+| Kotlin/Android | `kotlin-developer` | kotlin-expert |
+| Ruby/Rails | `ruby-developer` | ruby-patterns |
+| PHP/Laravel | `php-developer` | php-patterns |
+| iOS/SwiftUI | `swift-developer` | swift-expert |
+| Web App | `frontend-specialist` | react-best-practices |
+| API | `backend-specialist` | api-patterns |
+| Mobile | `mobile-developer` | mobile-design |
+| Security | `security-auditor` | vulnerability-scanner |
+| Testing | `test-engineer` | testing-patterns |
+| Code Review | any (auto-detect language) | clean-code, naming-conventions |
+
+---
+
+## 🧪 Skill Loading Protocol
+
+```
+User Request → Language Detection → Load Language-Specific Skill
+    ↓
+Auto-detect conventions → Adapt to language standards
+```
+
+### Example
+- User asks: "Create a user service"
+- Agent detects: Go project
+- Loads: go-patterns/SKILL.md with Go conventions (PascalCase exports)
+
+---
+
+*Last Updated: March 2026 - Multi-Language Expansion Complete*
