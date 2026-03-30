@@ -1,18 +1,18 @@
-# Antigravity Kit Architecture
+# Opencode Kit Architecture
 
-> Comprehensive AI Agent Capability Expansion Toolkit - MULTI-LANGUAGE EDITION
+> Comprehensive AI Agent Capability Expansion Toolkit - ENHANCED EDITION v2
 
 ---
 
 ## 📋 Overview
 
-Antigravity Kit is a modular system consisting of:
+Opencode Kit is a modular system consisting of:
 
-- **27 Specialist Agents** - Role-based AI personas
+- **33 Specialist Agents** - Role-based AI personas (6 NEW)
 - **49 Skills** - Domain-specific knowledge modules
-- **27 Templates** - Multi-stack app scaffolding
+- **31 Templates** - Multi-stack app scaffolding (5 NEW)
 - **11 Workflows** - Slash command procedures
-- **5 GitHub Actions CI/CD** - Multi-language CI/CD pipelines
+- **10 GitHub Actions CI/CD** - Multi-language CI/CD pipelines (5 NEW)
 
 ---
 
@@ -21,21 +21,25 @@ Antigravity Kit is a modular system consisting of:
 ```plaintext
 .opencode/
 ├── ARCHITECTURE.md          # This file
-├── agents/                  # 27 Specialist Agents
+├── agents/                  # 33 Specialist Agents
 ├── skills/                  # 49 Skills (multi-language)
+│   ├── app-builder/         # App scaffolding orchestrator
+│   │   └── templates/       # 31 Project templates
+│   ├── [language]-patterns/ # Language-specific skills
+│   └── [domain]-skills/     # Domain-specific skills
 ├── workflows/               # 11 Slash Commands
-├── .github/workflows/       # 5 CI/CD Pipelines
+├── .github/workflows/       # 10 CI/CD Pipelines
 ├── rules/                   # Global Rules
 └── scripts/                 # Validation & Linting Scripts
-    ├── linters/             # Multi-language linting
+    ├── linters/             # Multi-language linting + MD validation
     └── testrunners/         # Multi-language testing
 ```
 
 ---
 
-## 🤖 Agents (27)
+## 🤖 Agents (33)
 
-### Original Agents (20)
+### Core Agents (20)
 | Agent | Focus | Skills Used |
 |-------|-------|-------------|
 | `orchestrator` | Multi-agent coordination | parallel-agents, behavioral-modes |
@@ -59,7 +63,7 @@ Antigravity Kit is a modular system consisting of:
 | `code-archaeologist` | Legacy code, refactoring | clean-code, code-review-checklist |
 | `explorer-agent` | Codebase analysis | - |
 
-### NEW: Multi-Language Agents (7)
+### Multi-Language Agents (7)
 | Agent | Focus | Skills Used |
 |-------|-------|-------------|
 | `go-developer` | Go/Golang development | go-patterns, go-concurrency |
@@ -69,6 +73,16 @@ Antigravity Kit is a modular system consisting of:
 | `ruby-developer` | Ruby/Rails development | ruby-patterns, rails-patterns |
 | `php-developer` | PHP/Laravel development | php-patterns, laravel-patterns |
 | `cpp-developer` | C++ development | cpp-modern, systems-programming |
+
+### NEW: Specialized Agents (6)
+| Agent | Focus | Skills Used |
+|-------|-------|-------------|
+| `data-engineer` | ETL, data pipelines, Spark, Kafka, dbt | database-design, python-patterns, deployment-procedures |
+| `ml-engineer` | ML/AI, model training, RAG, LLMs | python-patterns, database-design, api-patterns |
+| `cloud-architect` | AWS/Azure/GCP, infrastructure, IaC | deployment-procedures, server-management, database-design |
+| `accessibility-specialist` | WCAG, screen readers, inclusive design | frontend-design, web-design-guidelines, testing-patterns |
+| `graphql-developer` | GraphQL schemas, resolvers, federation | api-patterns, database-design, testing-patterns |
+| `mobile-native` | Swift/SwiftUI, Kotlin/Compose native | mobile-design, swift-expert, kotlin-expert |
 
 ---
 
@@ -180,23 +194,28 @@ Antigravity Kit is a modular system consisting of:
 
 ---
 
-## 📦 App Builder Templates (27)
+## 📦 App Builder Templates (31)
 
-### JavaScript/TypeScript (10)
+### JavaScript/TypeScript (15)
 - `nextjs-fullstack` - Next.js fullstack
 - `nextjs-saas` - Next.js SaaS
 - `nextjs-static` - Next.js static
 - `nuxt-app` - Nuxt 3 + Pinia
-- `sveltekit-app` - **NEW** - SvelteKit 2 + Prisma
+- `sveltekit-app` - SvelteKit 2 + Prisma
+- `react-router-v7` - **NEW** - React Router v7 (Remix v2)
+- `hono-cloudflare` - **NEW** - Hono + Cloudflare Workers
+- `solidstart-app` - **NEW** - SolidStart fine-grained reactivity
+- `angular-app` - **NEW** - Angular 18+ Standalone
 - `express-api` - Express.js API
 - `react-native-app` - React Native
 - `flutter-app` - Flutter mobile
 - `electron-desktop` - Electron desktop
 - `chrome-extension` - Chrome extension
+- `astro-starlight` - **NEW** - Astro Starlight documentation
 
 ### Python (2)
 - `python-fastapi` - FastAPI + SQLAlchemy
-- `django-app` - **NEW** - Django 4 + DRF + Celery
+- `django-app` - Django 4 + DRF + Celery
 
 ### Go (2)
 - `go-gin-api` - Go + Gin API
@@ -223,7 +242,7 @@ Antigravity Kit is a modular system consisting of:
 ### Swift (1)
 - `swiftui-app` - Swift + SwiftUI
 
-### Others (3)
+### Others (5)
 - `astro-static` - Astro static
 - `cli-tool` - CLI tool
 - `monorepo-turborepo` - Turborepo monorepo
@@ -273,6 +292,7 @@ The kit now **automatically adapts** to the language being used:
 | Script | Languages Supported |
 |--------|---------------------|
 | `lint_runner.py` | Python, Go, Rust, JS/TS, Java |
+| `md_validator.py` | **NEW** - Markdown files, YAML frontmatter, internal links |
 
 ### Test Scripts
 | Script | Languages Supported |
@@ -283,7 +303,7 @@ The kit now **automatically adapts** to the language being used:
 
 ---
 
-## 🚀 GitHub Actions CI/CD Pipelines (5)
+## 🚀 GitHub Actions CI/CD Pipelines (10)
 
 Automated CI/CD workflows for multi-language projects:
 
@@ -294,6 +314,11 @@ Automated CI/CD workflows for multi-language projects:
 | `dotnet-ci.yml` | .NET 8 | Tests, security analysis |
 | `python-ci.yml` | Python 3.11 | pytest, coverage, ruff |
 | `nodejs-ci.yml` | Node.js 20 | npm test, lint, build |
+| `ruby-ci.yml` | **NEW** - Ruby 3.3 | RSpec, RuboCop, Brakeman |
+| `rust-ci.yml` | **NEW** - Rust stable | cargo test, clippy, fmt |
+| `swift-ci.yml` | **NEW** - Swift/Xcode | xcodebuild, SwiftLint |
+| `kotlin-ci.yml` | **NEW** - Kotlin/Android | Gradle, detekt, ktlint |
+| `php-ci.yml` | **NEW** - PHP 8.3 | PHPUnit, Pint, PHPStan |
 
 ---
 
@@ -301,13 +326,13 @@ Automated CI/CD workflows for multi-language projects:
 
 | Metric | Value |
 |--------|-------|
-| **Total Agents** | 27 |
+| **Total Agents** | 33 |
 | **Total Skills** | 49 |
-| **Total Templates** | 27 |
+| **Total Templates** | 31 |
 | **Total Workflows** | 11 |
-| **CI/CD Pipelines** | 5 |
-| **Languages Supported** | 12+ (Go, Java, .NET, Kotlin, PHP, Ruby, C++, Swift, Python, Rust, JS/TS) |
-| **Coverage** | Full multi-language development |
+| **CI/CD Pipelines** | 10 |
+| **Languages Supported** | 15+ (Go, Java, .NET, Kotlin, PHP, Ruby, C++, Swift, Python, Rust, JS/TS, Angular, Svelte, SolidJS) |
+| **Coverage** | Full multi-language development + Data/ML + Cloud + Accessibility |
 
 ---
 

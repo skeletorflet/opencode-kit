@@ -174,8 +174,8 @@ Use the project-planner agent to create PLAN.md:
 ### Step 4: Verification (MANDATORY)
 The LAST agent must run appropriate verification scripts:
 ```bash
-python .agent/skills/vulnerability-scanner/scripts/security_scan.py .
-python .agent/skills/lint-and-validate/scripts/lint_runner.py .
+python .opencode/skills/security/vulnerability-scanner/scripts/security_scan.py .
+python .opencode/skills/general/lint-and-validate/scripts/lint_runner.py .
 ```
 
 ### Step 5: Synthesize Results
@@ -192,7 +192,7 @@ Combine all agent outputs into unified report.
 [Original task summary]
 
 ### Mode
-[Current Antigravity Agent mode: plan/edit/ask]
+[Current Opencode mode: plan/edit/ask]
 
 ### Agents Invoked (MINIMUM 3)
 | # | Agent | Focus Area | Status |
