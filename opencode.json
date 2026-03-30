@@ -1,20 +1,12 @@
 {
   "$schema": "https://opencode.ai/config.json",
-
-  "provider": {
-    "anthropic": {
-      "apiKey": "env:ANTHROPIC_API_KEY"
-    }
-  },
   "model": "anthropic/claude-sonnet-4-5",
   "small_model": "anthropic/claude-haiku-4-5-20251001",
-
   "instructions": [
     "AGENTS.md",
     ".opencode/rules/RULES.md",
     ".opencode/rules/GEMINI.md"
   ],
-
   "permission": {
     "edit": "ask",
     "bash": "ask",
@@ -26,11 +18,9 @@
       "*": "allow"
     }
   },
-
   "agent": {
     "build": {
       "mode": "primary",
-      "model": "anthropic/claude-sonnet-4-5",
       "prompt": "{file:.opencode/prompts/build.txt}",
       "permission": {
         "edit": "ask",
@@ -47,7 +37,6 @@
     },
     "plan": {
       "mode": "primary",
-      "model": "anthropic/claude-haiku-4-5-20251001",
       "temperature": 0.1,
       "permission": {
         "edit": "deny",
@@ -56,7 +45,6 @@
     },
     "review": {
       "mode": "subagent",
-      "model": "anthropic/claude-sonnet-4-5",
       "temperature": 0.1,
       "permission": {
         "edit": "deny",
@@ -71,7 +59,6 @@
     },
     "debugger": {
       "mode": "subagent",
-      "model": "anthropic/claude-sonnet-4-5",
       "temperature": 0.1,
       "steps": 15,
       "permission": {
@@ -85,7 +72,6 @@
       }
     }
   },
-
   "command": {
     "deploy-check": {
       "description": "Check deployment readiness",
@@ -93,35 +79,5 @@
       "agent": "plan"
     }
   },
-
-  "mcp": {
-    "context7": {
-      "type": "local",
-      "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp", "--api-key", "env:CONTEXT7_API_KEY"]
-    },
-    "shadcn": {
-      "type": "local",
-      "command": "npx",
-      "args": ["shadcn@latest", "mcp"]
-    },
-    "netlify": {
-      "type": "local",
-      "command": "npx",
-      "args": ["-y", "@netlify/mcp"]
-    }
-  },
-
-  "lsp": {
-    "typescript": {
-      "command": "typescript-language-server",
-      "args": ["--stdio"]
-    }
-  },
-
-  "formatter": {
-    "command": "prettier --write $FILE"
-  },
-
   "default_agent": "build"
 }
