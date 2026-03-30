@@ -187,7 +187,7 @@ def main():
     # Paths
     base_dir = Path(__file__).parent.parent.parent.parent.parent
     rules_dir = base_dir / "others/agent-skills/skills/react-best-practices/rules"
-    output_dir = base_dir / ".agent/skills/react-best-practices"
+    output_dir = base_dir / ".opencode/skills/react-best-practices"
 
     print(f"[*] Reading rules from: {rules_dir}")
     print(f"[*] Output to: {output_dir}")

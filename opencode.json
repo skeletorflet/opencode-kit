@@ -9,7 +9,12 @@
   ],
   "permission": {
     "edit": "ask",
-    "bash": "ask",
+    "bash": {
+      "*": "ask",
+      "git status": "allow",
+      "git diff*": "allow",
+      "git log*": "allow"
+    },
     "webfetch": "allow",
     "skill": {
       "*": "allow"
@@ -77,6 +82,42 @@
       "description": "Check deployment readiness",
       "template": "Review recent changes and check if the project is ready to deploy.\n!`git diff HEAD~1 --stat`\nList any blockers.",
       "agent": "plan"
+    }
+  },
+  "mcp": {
+    "context7": {
+      "type": "local",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp",
+        "--api-key",
+        "env:CONTEXT7_API_KEY"
+      ]
+    },
+    "shadcn": {
+      "type": "local",
+      "command": "npx",
+      "args": [
+        "shadcn@latest",
+        "mcp"
+      ]
+    },
+    "netlify": {
+      "type": "local",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@netlify/mcp"
+      ]
+    }
+  },
+  "lsp": {
+    "typescript": {
+      "command": "typescript-language-server",
+      "args": [
+        "--stdio"
+      ]
     }
   },
   "default_agent": "build"
