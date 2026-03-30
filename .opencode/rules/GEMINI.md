@@ -78,7 +78,7 @@ When auto-applying an agent, inform the user:
 | Step | Check | If Unchecked |
 |------|-------|--------------|
 | 1 | Did I identify the correct agent for this domain? | → STOP. Analyze request domain first. |
-| 2 | Did I READ the agent's `.md` file (or recall its rules)? | → STOP. Open `.agent/agents/{agent}.md` |
+| 2 | Did I READ the agent's `.md` file (or recall its rules)? | → STOP. Open `.opencode/agents/{agent}.md` |
 | 3 | Did I announce `🤖 Applying knowledge of @[agent]...`? | → STOP. Add announcement before response. |
 | 4 | Did I load required skills from agent's frontmatter? | → STOP. Check `skills:` field and read them. |
 
@@ -126,9 +126,9 @@ When user's prompt is NOT in English:
 
 **Path Awareness:**
 
-- Agents: `.agent/` (Project)
-- Skills: `.agent/skills/` (Project)
-- Runtime Scripts: `.agent/skills/<skill>/scripts/`
+- Agents: `.opencode/agents/` (Project)
+- Skills: `.opencode/skills/` (Project)
+- Runtime Scripts: `.opencode/skills/<skill>/scripts/`
 
 ### 🧠 Read → Understand → Apply
 
@@ -186,8 +186,8 @@ When user's prompt is NOT in English:
 
 | Task Stage       | Command                                            | Purpose                        |
 | ---------------- | -------------------------------------------------- | ------------------------------ |
-| **Manual Audit** | `python .agent/scripts/checklist.py .`             | Priority-based project audit   |
-| **Pre-Deploy**   | `python .agent/scripts/checklist.py . --url <URL>` | Full Suite + Performance + E2E |
+| **Manual Audit** | `python .opencode/scripts/checklist.py .`             | Priority-based project audit   |
+| **Pre-Deploy**   | `python .opencode/scripts/checklist.py . --url <URL>` | Full Suite + Performance + E2E |
 
 **Priority Execution Order:**
 
@@ -215,7 +215,7 @@ When user's prompt is NOT in English:
 | `lighthouse_audit.py`      | performance-profiling | Before deploy       |
 | `playwright_runner.py`     | webapp-testing        | Before deploy       |
 
-> 🔴 **Agents & Skills can invoke ANY script** via `python .agent/skills/<skill>/scripts/<script>.py`
+> 🔴 **Agents & Skills can invoke ANY script** via `python .opencode/skills/<skill>/scripts/<script>.py`
 
 ### 🎭 Gemini Mode Mapping
 
@@ -242,8 +242,8 @@ When user's prompt is NOT in English:
 
 | Task         | Read                            |
 | ------------ | ------------------------------- |
-| Web UI/UX    | `.agent/frontend-specialist.md` |
-| Mobile UI/UX | `.agent/mobile-developer.md`    |
+| Web UI/UX    | `.opencode/agents/frontend-specialist.md` |
+| Mobile UI/UX | `.opencode/agents/mobile-developer.md`    |
 
 **These agents contain:**
 
@@ -265,7 +265,7 @@ When user's prompt is NOT in English:
 
 ### Key Scripts
 
-- **Verify**: `.agent/scripts/verify_all.py`, `.agent/scripts/checklist.py`
+- **Verify**: `.opencode/scripts/verify_all.py`, `.opencode/scripts/checklist.py`
 - **Scanners**: `security_scan.py`, `dependency_analyzer.py`
 - **Audits**: `ux_audit.py`, `mobile_audit.py`, `lighthouse_audit.py`, `seo_checker.py`
 - **Test**: `playwright_runner.py`, `test_runner.py`

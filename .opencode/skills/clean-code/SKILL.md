@@ -347,14 +347,14 @@ File to edit: UserService.cs (C#)
 
 | Agent | Script | Command |
 |-------|--------|---------|
-| **frontend-specialist** | UX Audit | `python .agent/skills/frontend-design/scripts/ux_audit.py .` |
-| **frontend-specialist** | A11y Check | `python .agent/skills/frontend-design/scripts/accessibility_checker.py .` |
-| **backend-specialist** | API Validator | `python .agent/skills/api-patterns/scripts/api_validator.py .` |
-| **mobile-developer** | Mobile Audit | `python .agent/skills/mobile-design/scripts/mobile_audit.py .` |
-| **database-architect** | Schema Validate | `python .agent/skills/database-design/scripts/schema_validator.py .` |
-| **security-auditor** | Security Scan | `python .agent/skills/vulnerability-scanner/scripts/security_scan.py .` |
-| **test-engineer** | Test Runner | `python .agent/skills/testing-patterns/scripts/test_runner.py .` |
-| **Any agent** | Multi-Lang Lint | `python .agent/skills/lint-and-validate/scripts/lint_runner.py .` |
+| **frontend-specialist** | UX Audit | `python .opencode/skills/frontend-design/scripts/ux_audit.py .` |
+| **frontend-specialist** | A11y Check | `python .opencode/skills/frontend-design/scripts/accessibility_checker.py .` |
+| **backend-specialist** | API Validator | `python .opencode/skills/api-patterns/scripts/api_validator.py .` |
+| **mobile-developer** | Mobile Audit | `python .opencode/skills/mobile-design/scripts/mobile_audit.py .` |
+| **database-architect** | Schema Validate | `python .opencode/skills/database-design/scripts/schema_validator.py .` |
+| **security-auditor** | Security Scan | `python .opencode/skills/vulnerability-scanner/scripts/security_scan.py .` |
+| **test-engineer** | Test Runner | `python .opencode/skills/testing-patterns/scripts/test_runner.py .` |
+| **Any agent** | Multi-Lang Lint | `python .opencode/skills/lint-and-validate/scripts/lint_runner.py .` |
 
 > ❌ **WRONG:** `test-engineer` running `ux_audit.py`
 > ✅ **CORRECT:** `frontend-specialist` running `ux_audit.py`

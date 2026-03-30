@@ -18,7 +18,7 @@ Skills are folder-based packages. You can define these scopes based on your need
 
 | Scope         | Path                              | Description                          |
 | ------------- | --------------------------------- | ------------------------------------ |
-| **Workspace** | `<workspace-root>/.agent/skills/` | Available only in a specific project |
+| **Workspace** | `<workspace-root>/.opencode/skills/` | Available only in a specific project |
 
 ### Skill Directory Structure
 
@@ -39,7 +39,7 @@ This is an instruction-only skill; you only need to create the `SKILL.md` file.
 ### Step 1: Create the directory
 
 ```bash
-mkdir -p .agent/skills/code-review
+mkdir -p .opencode/skills/code-review
 ```
 
 ### Step 2: Create SKILL.md
@@ -119,12 +119,12 @@ This skill uses a reference file in the `resources/` (or `references/`) director
 ### Step 1: Create the directory
 
 ```bash
-mkdir -p .agent/skills/license-header-adder/resources
+mkdir -p .opencode/skills/license-header-adder/resources
 ```
 
 ### Step 2: Create the template file
 
-**`.agent/skills/license-header-adder/resources/HEADER.txt`**:
+**`.opencode/skills/license-header-adder/resources/HEADER.txt`**:
 
 ```
 /*
@@ -136,7 +136,7 @@ mkdir -p .agent/skills/license-header-adder/resources
 
 ### Step 3: Create SKILL.md
 
-**`.agent/skills/license-header-adder/SKILL.md`**:
+**`.opencode/skills/license-header-adder/SKILL.md`**:
 
 ```markdown
 ---

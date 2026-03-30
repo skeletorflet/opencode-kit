@@ -15,7 +15,7 @@ This command adds features or makes updates to existing application.
 ### Steps:
 
 1. **Understand Current State**
-   - Load project state with `python .agent/scripts/session_manager.py info`
+   - Load project state with `python .opencode/scripts/session_manager.py info`
    - Understand existing features, tech stack
 
 2. **Plan Changes**

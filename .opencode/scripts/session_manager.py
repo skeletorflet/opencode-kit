@@ -6,8 +6,8 @@ Analyzes project state, detects tech stack, tracks file statistics, and provides
 a summary of the current session.
 
 Usage:
-    python .agent/scripts/session_manager.py status [path]
-    python .agent/scripts/session_manager.py info [path]
+    python .opencode/scripts/session_manager.py status [path]
+    python .opencode/scripts/session_manager.py info [path]
 """
 
 import os
