@@ -8,11 +8,12 @@
 
 Opencode Kit is a modular system consisting of:
 
-- **33 Specialist Agents** - Role-based AI personas (6 NEW)
-- **49 Skills** - Domain-specific knowledge modules
-- **31 Templates** - Multi-stack app scaffolding (5 NEW)
-- **11 Workflows** - Slash command procedures
-- **10 GitHub Actions CI/CD** - Multi-language CI/CD pipelines (5 NEW)
+- **33 Specialist Agents** - Role-based AI personas
+- **69 Skills** - Domain-specific knowledge modules (flat structure, all discoverable)
+- **27 Templates** - Multi-stack app scaffolding
+- **5 Commands** - Custom slash commands
+- **2 Custom Tools** - TypeScript callable tools
+- **3 Scripts** - Validation, linting, preview management
 
 ---
 
@@ -21,15 +22,19 @@ Opencode Kit is a modular system consisting of:
 ```plaintext
 .opencode/
 ├── ARCHITECTURE.md          # This file
+├── .gitignore               # Git ignore for kit artifacts
+├── package.json             # Plugin dependency (@opencode-ai/plugin)
 ├── agents/                  # 33 Specialist Agents
-├── skills/                  # 49 Skills (multi-language)
+├── skills/                  # 69 Skills (flat structure, all discoverable by OpenCode)
 │   ├── app-builder/         # App scaffolding orchestrator
-│   │   └── templates/       # 31 Project templates
+│   │   └── templates/       # 27 Project templates
+│   ├── game-development/    # Game dev parent skill (sub-skills at root)
 │   ├── [language]-patterns/ # Language-specific skills
 │   └── [domain]-skills/     # Domain-specific skills
-├── workflows/               # 11 Slash Commands
-├── .github/workflows/       # 10 CI/CD Pipelines
-├── rules/                   # Global Rules
+├── commands/                # 5 Custom slash commands
+├── tools/                   # 2 Custom tools (TypeScript)
+├── prompts/                 # Reusable prompt files (build.txt, review.txt)
+├── rules/                   # Global Rules (RULES.md)
 └── scripts/                 # Validation & Linting Scripts
     ├── linters/             # Multi-language linting + MD validation
     └── testrunners/         # Multi-language testing
@@ -74,7 +79,7 @@ Opencode Kit is a modular system consisting of:
 | `php-developer` | PHP/Laravel development | php-patterns, laravel-patterns |
 | `cpp-developer` | C++ development | cpp-modern, systems-programming |
 
-### NEW: Specialized Agents (6)
+### Specialized Agents (6)
 | Agent | Focus | Skills Used |
 |-------|-------|-------------|
 | `data-engineer` | ETL, data pipelines, Spark, Kafka, dbt | database-design, python-patterns, deployment-procedures |
@@ -86,16 +91,16 @@ Opencode Kit is a modular system consisting of:
 
 ---
 
-## 🧩 Skills (47)
+## 🧩 Skills (69)
 
-### Language-Agnostic Skills (REFACTORIZED)
+### Language-Agnostic Skills
 | Skill | Description |
 |-------|-------------|
-| `clean-code` | Coding standards - NOW LANGUAGE-AGNOSTIC |
+| `clean-code` | Coding standards - language-agnostic |
 | `lint-and-validate` | Multi-language linting |
 | `code-review-checklist` | Code review with language-adaptive conventions |
 | `systematic-debugging` | Debugging tools by language |
-| `naming-conventions` | **NEW** - Complete naming convention table by language |
+| `naming-conventions` | Complete naming convention table by language |
 
 ### Backend & API
 | Skill | Description |
@@ -104,30 +109,43 @@ Opencode Kit is a modular system consisting of:
 | `nestjs-expert` | NestJS 10+, TypeORM, JWT |
 | `nodejs-best-practices` | Node.js async, modules |
 | `python-patterns` | Python 3.11+, FastAPI |
-| `django-patterns` | **NEW** - Django 4.2+, DRF, Celery |
-| `go-patterns` | **NEW** - Go 1.22+, Gin/Chi/Fiber |
-| `java-expert` | **NEW** - Java 21+, Spring Boot |
-| `dotnet-expert` | **NEW** - .NET 8, C# 12, Minimal APIs |
-| `kotlin-expert` | **NEW** - Kotlin 2.0+, Ktor |
-| `php-patterns` | **NEW** - PHP 8.3, Laravel/Symfony |
-| `ruby-patterns` | **NEW** - Ruby 3.3+, Rails 7 |
+| `django-patterns` | Django 4.2+, DRF, Celery |
+| `go-patterns` | Go 1.22+, Gin/Chi/Fiber |
+| `go-concurrency` | Go goroutines, channels, sync primitives |
+| `java-expert` | Java 21+, Spring Boot |
+| `spring-boot` | Spring Boot 3+, REST APIs, Security |
+| `dotnet-expert` | .NET 8, C# 12, Minimal APIs |
+| `aspnet-core` | ASP.NET Core 8+, EF Core, Identity |
+| `kotlin-expert` | Kotlin 2.0+, Ktor |
+| `php-patterns` | PHP 8.3, Laravel/Symfony |
+| `laravel-patterns` | Laravel 11+, Eloquent, API Resources |
+| `ruby-patterns` | Ruby 3.3+, Rails 7 |
+| `rails-patterns` | Rails 7+, Hotwire, Turbo, Stimulus |
 | `rust-pro` | Rust 1.75+, Tokio, Axum |
+| `cpp-modern` | C++23/26, RAII, Concepts |
+| `systems-programming` | Low-level patterns, FFI, memory management |
 
 ### Mobile & Desktop
 | Skill | Description |
 |-------|-------------|
 | `mobile-design` | Mobile UI/UX patterns |
-| `swift-expert` | **NEW** - Swift 5.9+, SwiftUI |
+| `swift-expert` | Swift 5.9+, SwiftUI |
+| `android-compose` | Jetpack Compose, Material 3 |
 
 ### Game Development
 | Skill | Description |
 |-------|-------------|
 | `game-development` | Game logic, mechanics |
-
-### Systems & Low-Level
-| Skill | Description |
-|-------|-------------|
-| `cpp-modern` | **NEW** - C++23/26, RAII, Concepts |
+| `pc-games` | PC game development (Unity, Unreal) |
+| `web-games` | Browser games (Phaser, Three.js) |
+| `mobile-games` | Mobile game development |
+| `game-design` | Game design, GDD, balancing |
+| `multiplayer` | Multiplayer, networking, sync |
+| `vr-ar` | VR/AR development |
+| `2d-games` | 2D games, sprites, tilemaps |
+| `3d-games` | 3D games, rendering, shaders |
+| `game-art` | Game art, visual style, animation |
+| `game-audio` | Game audio, sound design, music |
 
 ### Database
 | Skill | Description |
@@ -138,17 +156,19 @@ Opencode Kit is a modular system consisting of:
 ### Frontend & UI
 | Skill | Description |
 |-------|-------------|
-| `react-best-practices` | React & Next.js performance |
+| `react-best-practices` | React 18+, Next.js, RSC |
+| `nextjs-react-expert` | Next.js performance optimization |
 | `web-design-guidelines` | Web UI audit |
 | `tailwind-patterns` | Tailwind CSS v4 |
 | `frontend-design` | UI/UX patterns |
-| `ui-ux-pro-max` | 50 styles, 21 palettes |
+| `ui-ux-pro-max` | 50+ styles, 21 palettes, anti-cliché |
 
 ### Cloud & Infrastructure
 | Skill | Description |
 |-------|-------------|
 | `deployment-procedures` | CI/CD, deploy workflows |
 | `server-management` | Infrastructure management |
+| `docker-expert` | Docker, docker-compose, multi-stage builds |
 
 ### Testing & Quality
 | Skill | Description |
@@ -190,11 +210,15 @@ Opencode Kit is a modular system consisting of:
 | `documentation-templates` | Doc formats |
 | `i18n-localization` | Internationalization |
 | `performance-profiling` | Web Vitals, optimization |
-| `code-review-checklist` | Code review |
+| `parallel-agents` | Multi-agent orchestration |
+| `behavioral-modes` | AI operational modes |
+| `intelligent-routing` | Automatic agent selection |
+| `i18n-localization` | Internationalization |
+| `performance-profiling` | Web Vitals, optimization |
 
 ---
 
-## 📦 App Builder Templates (31)
+## 📦 App Builder Templates (27)
 
 ### JavaScript/TypeScript (15)
 - `nextjs-fullstack` - Next.js fullstack
@@ -202,68 +226,57 @@ Opencode Kit is a modular system consisting of:
 - `nextjs-static` - Next.js static
 - `nuxt-app` - Nuxt 3 + Pinia
 - `sveltekit-app` - SvelteKit 2 + Prisma
-- `react-router-v7` - **NEW** - React Router v7 (Remix v2)
-- `hono-cloudflare` - **NEW** - Hono + Cloudflare Workers
-- `solidstart-app` - **NEW** - SolidStart fine-grained reactivity
-- `angular-app` - **NEW** - Angular 18+ Standalone
 - `express-api` - Express.js API
 - `react-native-app` - React Native
 - `flutter-app` - Flutter mobile
 - `electron-desktop` - Electron desktop
 - `chrome-extension` - Chrome extension
-- `astro-starlight` - **NEW** - Astro Starlight documentation
+- `astro-static` - Astro static
+- `nestjs-api` - NestJS API
+- `astro-starlight` - Astro Starlight documentation
+- `solidstart-app` - SolidStart
+- `react-router-v7` - React Router v7
 
-### Python (2)
+### Backend (8)
 - `python-fastapi` - FastAPI + SQLAlchemy
 - `django-app` - Django 4 + DRF + Celery
-
-### Go (2)
 - `go-gin-api` - Go + Gin API
 - `go-fiber-api` - Go + Fiber API
-
-### Java (1)
 - `spring-boot-api` - Spring Boot 3 + JPA
-
-### .NET (1)
 - `aspnet-core-api` - .NET 8 + Minimal APIs
-
-### PHP (1)
 - `laravel-app` - Laravel 11
-
-### Ruby (1)
 - `rails-app` - Rails 7 + Hotwire
 
-### Rust (1)
+### Systems & Mobile (4)
 - `rust-axum-api` - Rust + Axum
-
-### Kotlin (1)
 - `kotlin-android` - Kotlin + Jetpack Compose
-
-### Swift (1)
 - `swiftui-app` - Swift + SwiftUI
+- `ktor-api` - Kotlin Ktor API
 
-### Others (5)
-- `astro-static` - Astro static
+### Other
 - `cli-tool` - CLI tool
 - `monorepo-turborepo` - Turborepo monorepo
 
 ---
 
-## 🔄 Workflows (11)
+## 📋 Commands (5)
 
-| Command | Description |
-|---------|-------------|
-| `/brainstorm` | Socratic discovery |
-| `/create` | Create new features |
-| `/debug` | Debug issues |
-| `/deploy` | Deploy application |
-| `/enhance` | Improve existing code |
-| `/orchestrate` | Multi-agent coordination |
-| `/plan` | Task breakdown |
-| `/preview` | Preview changes |
-| `/status` | Check project status |
-| `/test` | Run tests |
-| `/ui-ux-pro-max` | Design with 50 styles |
+| Command | Agent | Description |
+|---------|-------|-------------|
+| `/audit-security` | security-auditor | Full security audit |
+| `/deploy-check` | plan | Verify deployment readiness |
+| `/fix-types` | build | Fix TypeScript type errors |
+| `/gen-docs` | documentation-writer | Generate documentation |
+| `/review-pr` | review | Review branch changes |
+
+---
+
+## 🛠️ Custom Tools (2)
+
+| Tool | Description |
+|------|-------------|
+| `read-env` | List environment variable names from .env files |
+| `run-script` | Run package.json scripts |
 
 ---
 
@@ -286,39 +299,16 @@ The kit now **automatically adapts** to the language being used:
 
 ---
 
-## 🔧 Multi-Language Scripts
+## 🔧 Scripts
 
-### Linting Scripts
-| Script | Languages Supported |
-|--------|---------------------|
-| `lint_runner.py` | Python, Go, Rust, JS/TS, Java |
-| `md_validator.py` | **NEW** - Markdown files, YAML frontmatter, internal links |
-
-### Test Scripts
-| Script | Languages Supported |
-|--------|---------------------|
-| `test_runner_multi.py` | Python (pytest), Go (go test), Rust (cargo test), Java (mvn/junit), JS (Jest) |
-
----
-
----
-
-## 🚀 GitHub Actions CI/CD Pipelines (10)
-
-Automated CI/CD workflows for multi-language projects:
-
-| Workflow | Language | Features |
-|----------|----------|----------|
-| `go-ci.yml` | Go 1.22+ | Tests, lint, docker build |
-| `java-ci.yml` | Java 21 | Maven, security scan |
-| `dotnet-ci.yml` | .NET 8 | Tests, security analysis |
-| `python-ci.yml` | Python 3.11 | pytest, coverage, ruff |
-| `nodejs-ci.yml` | Node.js 20 | npm test, lint, build |
-| `ruby-ci.yml` | **NEW** - Ruby 3.3 | RSpec, RuboCop, Brakeman |
-| `rust-ci.yml` | **NEW** - Rust stable | cargo test, clippy, fmt |
-| `swift-ci.yml` | **NEW** - Swift/Xcode | xcodebuild, SwiftLint |
-| `kotlin-ci.yml` | **NEW** - Kotlin/Android | Gradle, detekt, ktlint |
-| `php-ci.yml` | **NEW** - PHP 8.3 | PHPUnit, Pint, PHPStan |
+| Script | Purpose |
+|--------|---------|
+| `checklist.py` | Priority-based project audit |
+| `verify_all.py` | Full verification suite |
+| `auto_preview.py` | Dev server management |
+| `linters/lint_runner.py` | Multi-language linting |
+| `linters/md_validator.py` | Markdown validation |
+| `testrunners/test_runner_multi.py` | Multi-language testing |
 
 ---
 
@@ -327,10 +317,10 @@ Automated CI/CD workflows for multi-language projects:
 | Metric | Value |
 |--------|-------|
 | **Total Agents** | 33 |
-| **Total Skills** | 49 |
-| **Total Templates** | 31 |
-| **Total Workflows** | 11 |
-| **CI/CD Pipelines** | 10 |
+| **Total Skills** | 69 (flat structure, all discoverable by OpenCode) |
+| **Total Templates** | 27 |
+| **Total Commands** | 5 |
+| **Custom Tools** | 2 |
 | **Languages Supported** | 15+ (Go, Java, .NET, Kotlin, PHP, Ruby, C++, Swift, Python, Rust, JS/TS, Angular, Svelte, SolidJS) |
 | **Coverage** | Full multi-language development + Data/ML + Cloud + Accessibility |
 
@@ -341,13 +331,13 @@ Automated CI/CD workflows for multi-language projects:
 | Need | Agent | Skills |
 |------|-------|--------|
 | Python API | (use python-patterns) | python-patterns, fastapi |
-| Go API | `go-developer` | go-patterns |
-| Java API | `java-developer` | java-expert |
-| .NET API | `dotnet-developer` | dotnet-expert |
-| Kotlin/Android | `kotlin-developer` | kotlin-expert |
-| Ruby/Rails | `ruby-developer` | ruby-patterns |
-| PHP/Laravel | `php-developer` | php-patterns |
-| iOS/SwiftUI | `swift-developer` | swift-expert |
+| Go API | `go-developer` | go-patterns, go-concurrency |
+| Java API | `java-developer` | java-expert, spring-boot |
+| .NET API | `dotnet-developer` | dotnet-expert, aspnet-core |
+| Kotlin/Android | `kotlin-developer` | kotlin-expert, android-compose |
+| Ruby/Rails | `ruby-developer` | ruby-patterns, rails-patterns |
+| PHP/Laravel | `php-developer` | php-patterns, laravel-patterns |
+| iOS/SwiftUI | `mobile-native` | swift-expert |
 | Web App | `frontend-specialist` | react-best-practices |
 | API | `backend-specialist` | api-patterns |
 | Mobile | `mobile-developer` | mobile-design |

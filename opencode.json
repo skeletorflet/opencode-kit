@@ -7,16 +7,64 @@
     ".opencode/rules/RULES.md",
     ".opencode/rules/GEMINI.md"
   ],
+  "mcp": {
+    "context7": {
+      "type": "local",
+      "command": ["npx", "-y", "@upstash/context7-mcp", "--api-key", "{env:CONTEXT7_API_KEY}"],
+      "enabled": true
+    },
+    "shadcn": {
+      "type": "local",
+      "command": ["npx", "shadcn@latest", "mcp"],
+      "enabled": true
+    },
+    "netlify": {
+      "type": "local",
+      "command": ["npx", "-y", "@netlify/mcp"],
+      "enabled": true
+    }
+  },
   "permission": {
+    "read": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.env.example": "allow"
+    },
     "edit": "ask",
-    "bash": "ask",
+    "write": "ask",
+    "bash": {
+      "*": "ask",
+      "git status": "allow",
+      "git status*": "allow",
+      "git diff*": "allow",
+      "git log*": "allow",
+      "npm run*": "ask",
+      "pnpm *": "ask",
+      "node *": "ask",
+      "cat *": "allow",
+      "grep *": "allow",
+      "find *": "allow",
+      "ls*": "allow",
+      "dir*": "allow",
+      "python *": "allow",
+      "python3 *": "allow",
+      "rm *": "deny",
+      "del *": "deny",
+      "rmdir *": "deny"
+    },
     "webfetch": "allow",
+    "websearch": "allow",
+    "glob": "allow",
+    "list": "allow",
     "skill": {
       "*": "allow"
     },
     "task": {
       "*": "allow"
-    }
+    },
+    "external_directory": "ask",
+    "doom_loop": "ask"
   },
   "agent": {
     "build": {
@@ -27,6 +75,7 @@
         "bash": {
           "*": "ask",
           "git status": "allow",
+          "git status*": "allow",
           "git diff*": "allow",
           "git log*": "allow",
           "npm run*": "ask",
