@@ -1,6 +1,6 @@
 ---
 description: Verify project is ready to deploy or publish
-agent: plan
+agent: project-planner
 ---
 
 Check if the project is ready to deploy.

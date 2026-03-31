@@ -1,7 +1,6 @@
 ---
 name: game-art
 description: Game art principles. Visual style selection, asset pipeline, animation workflow.
-allowed-tools: Read, Glob, Grep
 ---
 
 # Game Art Principles

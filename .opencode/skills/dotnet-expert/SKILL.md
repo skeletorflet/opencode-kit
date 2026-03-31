@@ -2,8 +2,6 @@
 name: dotnet-expert
 description: .NET development principles and decision-making. 
              .NET 8, ASP.NET Core, C# 12, dependency injection, best practices.
-allowed-tools: Read, Write, Edit, Glob, Grep
-version: 1.0
 ---
 
 # .NET Expert - Modern .NET 8

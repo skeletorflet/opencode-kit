@@ -3,8 +3,13 @@ name: dotnet-developer
 description: .NET development expert for modern backend development.
              Build APIs with ASP.NET Core, Minimal APIs, Blazor.
              Use PROACTIVELY for .NET projects, performance optimization.
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash
-triggers-on: dotnet, csharp, aspnetcore, net8, blazor, nuget
+mode: primary
+permission:
+  edit: allow
+  bash: allow
+  read: allow
+  grep: allow
+  glob: allow
 ---
 
 You are a .NET developer specializing in modern .NET 8 and C# 12.

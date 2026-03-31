@@ -1,7 +1,6 @@
 ---
 name: server-management
 description: Server management principles and decision-making. Process management, monitoring strategy, and scaling decisions. Teaches thinking, not commands.
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
 # Server Management

@@ -8,12 +8,12 @@
 
 Opencode Kit is a modular system consisting of:
 
-- **33 Specialist Agents** - Role-based AI personas
+- **34 Specialist Agents** - Role-based AI personas
 - **69 Skills** - Domain-specific knowledge modules (flat structure, all discoverable)
 - **27 Templates** - Multi-stack app scaffolding
 - **5 Commands** - Custom slash commands
 - **2 Custom Tools** - TypeScript callable tools
-- **3 Scripts** - Validation, linting, preview management
+- **7 Scripts** - Validation, linting, preview management, testing
 
 ---
 
@@ -213,8 +213,6 @@ Opencode Kit is a modular system consisting of:
 | `parallel-agents` | Multi-agent orchestration |
 | `behavioral-modes` | AI operational modes |
 | `intelligent-routing` | Automatic agent selection |
-| `i18n-localization` | Internationalization |
-| `performance-profiling` | Web Vitals, optimization |
 
 ---
 

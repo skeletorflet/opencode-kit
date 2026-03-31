@@ -2,8 +2,6 @@
 name: java-expert
 description: Java development principles and decision-making. 
              Modern Java 21+ patterns, Spring Boot, Quarkus, concurrency, JVM tuning.
-allowed-tools: Read, Write, Edit, Glob, Grep
-version: 1.0
 ---
 
 # Java Expert - Modern Java 21+

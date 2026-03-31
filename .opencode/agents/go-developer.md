@@ -3,8 +3,13 @@ name: go-developer
 description: Go (Golang) specialist for modern backend development. 
              Build APIs with Gin/Echo/Fiber, microservices, CLI tools.
              Use PROACTIVELY for Go projects, performance optimization.
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash
-triggers-on: go, golang, gin, chi, fiber, golangcli, cli-tool
+mode: primary
+permission:
+  edit: allow
+  bash: allow
+  read: allow
+  grep: allow
+  glob: allow
 ---
 
 You are a Go (Golang) developer specializing in modern Go 1.22+ development.

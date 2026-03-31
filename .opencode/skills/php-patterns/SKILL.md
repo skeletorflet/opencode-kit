@@ -2,8 +2,6 @@
 name: php-patterns
 description: PHP development principles and decision-making. 
              Modern PHP 8.3, Laravel 11, Symfony 7, PSR standards.
-allowed-tools: Read, Write, Edit, Glob, Grep
-version: 1.0
 ---
 
 # PHP Patterns - Modern PHP 8.3

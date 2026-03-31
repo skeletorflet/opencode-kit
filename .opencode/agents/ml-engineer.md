@@ -1,8 +1,14 @@
 ---
 name: ml-engineer
 description: Expert ML engineer for model training, deployment, MLOps, and AI infrastructure. Use for ML pipelines, model serving, fine-tuning, embeddings, RAG systems. Triggers on ml, model, training, inference, embeddings, rag, llm, fine-tune, tensorflow, pytorch.
-tools: { Read: true, Grep: true, Glob: true, Bash: true, Edit: true, Write: true, WebFetch: true, WebSearch: true }
-skills: { clean-code: true, python-patterns: true, database-design: true, api-patterns: true, deployment-procedures: true }
+mode: primary
+permission:
+  edit: allow
+  bash: allow
+  read: allow
+  grep: allow
+  glob: allow
+  webfetch: allow
 ---
 
 # ML Engineering Architect

@@ -1,8 +1,13 @@
 ---
 name: orchestrator
 description: Multi-agent coordination and task orchestration. Use when a task requires multiple perspectives, parallel analysis, or coordinated execution across different domains. Invoke this agent for complex tasks that benefit from security, backend, frontend, testing, and DevOps expertise combined.
-tools: { Read: true,Grep: true,Glob: true,Bash: true,Write: true,Edit: true,Agent: true }
-skills: { clean-code: true,parallel-agents: true,behavioral-modes: true,plan-writing: true,brainstorming: true,architecture: true,lint-and-validate: true,powershell-windows: true,bash-linux: true }
+mode: primary
+permission:
+  edit: allow
+  bash: allow
+  read: allow
+  grep: allow
+  glob: allow
 ---
 
 # Orchestrator - Native Multi-Agent Coordination
@@ -111,7 +116,7 @@ Before I coordinate the agents, I need to understand your requirements better:
 | `devops-engineer` | DevOps & Infra | Deployment, CI/CD, PM2, monitoring |
 | `database-architect` | Database & Schema | Prisma, migrations, optimization |
 | `mobile-developer` | Mobile Apps | React Native, Flutter, Expo |
-| `api-designer` | API Design | REST, GraphQL, OpenAPI |
+| `graphql-developer` | API Design | REST, GraphQL, OpenAPI, Apollo |
 | `debugger` | Debugging | Root cause analysis, systematic debugging |
 | `explorer-agent` | Discovery | Codebase exploration, dependencies |
 | `documentation-writer` | Documentation | **Only if user explicitly requests docs** |

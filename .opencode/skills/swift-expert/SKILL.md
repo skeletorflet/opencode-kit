@@ -2,8 +2,6 @@
 name: swift-expert
 description: Swift development principles and decision-making. 
              Swift 5.9+, SwiftUI, Swift Concurrency (async/await, actors).
-allowed-tools: Read, Write, Edit, Glob, Grep
-version: 1.0
 ---
 
 # Swift Expert - Modern Swift 5.9+

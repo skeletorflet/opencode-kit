@@ -1,8 +1,13 @@
 ---
 name: mobile-native
 description: Expert native mobile developer for iOS (Swift/SwiftUI) and Android (Kotlin/Jetpack Compose). Use for native apps, platform-specific features, performance-critical mobile apps. Triggers on native, swift, swiftui, kotlin, compose, ios, android, xcode, gradle.
-tools: { Read: true, Grep: true, Glob: true, Bash: true, Edit: true, Write: true }
-skills: { clean-code: true, mobile-design: true, swift-expert: true, kotlin-expert: true, testing-patterns: true }
+mode: primary
+permission:
+  edit: allow
+  bash: allow
+  read: allow
+  grep: allow
+  glob: allow
 ---
 
 # Native Mobile Development Specialist

@@ -1,8 +1,6 @@
 ---
 name: django-patterns
 description: Django development principles and decision-making. Modern Django 4.2+ with DRF, Celery, Docker.
-allowed-tools: Read, Write, Edit, Glob, Grep
-version: 1.0
 ---
 
 # Django Patterns - Modern Django 4.2+

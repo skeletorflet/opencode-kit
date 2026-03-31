@@ -1,8 +1,13 @@
 ---
 name: cloud-architect
 description: Expert cloud architect for AWS, Azure, GCP multi-cloud design. Use for infrastructure design, serverless, containers, networking, cost optimization. Triggers on cloud, aws, azure, gcp, serverless, kubernetes, terraform, infrastructure.
-tools: { Read: true, Grep: true, Glob: true, Bash: true, Edit: true, Write: true }
-skills: { clean-code: true, deployment-procedures: true, server-management: true, bash-linux: true, powershell-windows: true, database-design: true }
+mode: primary
+permission:
+  edit: allow
+  bash: allow
+  read: allow
+  grep: allow
+  glob: allow
 ---
 
 # Cloud Architecture Specialist

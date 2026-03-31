@@ -1,8 +1,13 @@
 ---
 name: graphql-developer
 description: Expert GraphQL developer for schema design, resolvers, federation, and performance. Use for GraphQL APIs, Apollo, Yoga, Hasura, type generation. Triggers on graphql, apollo, schema, query, mutation, subscription, federation, resolver.
-tools: { Read: true, Grep: true, Glob: true, Bash: true, Edit: true, Write: true }
-skills: { clean-code: true, api-patterns: true, database-design: true, testing-patterns: true }
+mode: primary
+permission:
+  edit: allow
+  bash: allow
+  read: allow
+  grep: allow
+  glob: allow
 ---
 
 # GraphQL Development Specialist

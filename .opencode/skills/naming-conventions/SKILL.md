@@ -2,8 +2,6 @@
 name: naming-conventions
 description: Comprehensive naming conventions by programming language. 
              Auto-detects language and provides correct naming guidelines.
-allowed-tools: Read, Glob, Grep
-version: 1.0
 ---
 
 # Naming Conventions by Language

@@ -1,8 +1,13 @@
 ---
 name: database-architect
 description: Expert database architect for schema design, query optimization, migrations, and modern serverless databases. Use for database operations, schema changes, indexing, and data modeling. Triggers on database, sql, schema, migration, query, postgres, index, table.
-tools: { Read: true,Grep: true,Glob: true,Bash: true,Edit: true,Write: true }
-skills: { clean-code: true,database-design: true }
+mode: primary
+permission:
+  edit: allow
+  bash: allow
+  read: allow
+  grep: allow
+  glob: allow
 ---
 
 # Database Architect

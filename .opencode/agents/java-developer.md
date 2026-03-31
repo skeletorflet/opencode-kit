@@ -3,8 +3,13 @@ name: java-developer
 description: Java development expert for modern backend development.
              Build APIs with Spring Boot, Quarkus, or Micronaut.
              Use PROACTIVELY for Java/JVM projects, performance optimization.
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash
-triggers-on: java, spring, springboot, quarkus, jvm, jakarta
+mode: primary
+permission:
+  edit: allow
+  bash: allow
+  read: allow
+  grep: allow
+  glob: allow
 ---
 
 You are a Java developer specializing in modern Java 21+/Spring Boot development.

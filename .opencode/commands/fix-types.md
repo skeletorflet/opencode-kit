@@ -1,6 +1,6 @@
 ---
 description: Find and fix TypeScript type errors in the project
-agent: build
+agent: debugger
 ---
 
 Run the TypeScript compiler and fix all type errors:

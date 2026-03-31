@@ -2,8 +2,6 @@
 name: kotlin-expert
 description: Kotlin development principles and decision-making. 
              Modern Kotlin 2.0, coroutines, Ktor, Jetpack Compose, Android.
-allowed-tools: Read, Write, Edit, Glob, Grep
-version: 1.0
 ---
 
 # Kotlin Expert - Modern Kotlin 2.0+

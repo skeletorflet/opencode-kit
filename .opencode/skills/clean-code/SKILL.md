@@ -2,12 +2,9 @@
 name: clean-code
 description: Coding standards that adapt to each language's conventions. 
              No opinionated rules - follows language-specific standards.
-allowed-tools: Read, Write, Edit, Glob, Grep
-version: 3.0
-priority: CRITICAL
 ---
 
-# Clean Code - Agnóstico por Lenguaje
+# Clean Code - Language Agnostic
 
 > **"Follow the conventions of the language you're using."**
 > **IMPORTANT:** This skill auto-detects the project language and adapts conventions accordingly.

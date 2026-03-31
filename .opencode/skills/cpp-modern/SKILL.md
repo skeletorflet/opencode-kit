@@ -2,8 +2,6 @@
 name: cpp-modern
 description: Modern C++ development principles and decision-making. 
              C++23/C++26, RAII, modern idioms, performance optimization.
-allowed-tools: Read, Write, Edit, Glob, Grep
-version: 1.0
 ---
 
 # C++ Modern - C++23/C++26

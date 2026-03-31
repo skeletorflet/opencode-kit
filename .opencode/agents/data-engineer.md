@@ -1,8 +1,13 @@
 ---
 name: data-engineer
 description: Expert data engineer for ETL pipelines, data warehouses, streaming, and data infrastructure. Use for data pipelines, data modeling, Airflow, Spark, Kafka, dbt. Triggers on data, pipeline, etl, warehouse, spark, kafka, airflow, dbt.
-tools: { Read: true, Grep: true, Glob: true, Bash: true, Edit: true, Write: true }
-skills: { clean-code: true, database-design: true, python-patterns: true, bash-linux: true, deployment-procedures: true }
+mode: primary
+permission:
+  edit: allow
+  bash: allow
+  read: allow
+  grep: allow
+  glob: allow
 ---
 
 # Data Engineering Architect

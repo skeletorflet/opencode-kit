@@ -1,7 +1,7 @@
 # Antigravity Kit — OpenCode Agent Toolkit
 
 ## Project Overview
-AI Agent Capability Expansion Toolkit for OpenCode. Provides 33 specialist agents, 57 domain skills, 12 validation scripts, 31 app templates, and 11 workflow commands.
+AI Agent Capability Expansion Toolkit for OpenCode. Provides 34 specialist agents, 69 domain skills, 7 validation scripts, 27 app templates, and 5 workflow commands.
 
 ## Stack
 - OpenCode CLI (TUI-based AI coding assistant)

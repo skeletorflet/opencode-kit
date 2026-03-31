@@ -2,8 +2,6 @@
 name: ruby-patterns
 description: Ruby development principles and decision-making. 
              Modern Ruby 3.3+, Rails 7.2, Ruby pattern matching, Ractor.
-allowed-tools: Read, Write, Edit, Glob, Grep
-version: 1.0
 ---
 
 # Ruby Patterns - Modern Ruby 3.3+

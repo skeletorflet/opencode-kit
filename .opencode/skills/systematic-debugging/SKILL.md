@@ -2,8 +2,6 @@
 name: systematic-debugging
 description: 4-phase systematic debugging methodology that adapts tools to each language.
              Auto-detects language and applies appropriate debugging tools.
-allowed-tools: Read, Glob, Grep, Bash
-version: 2.0
 ---
 
 # Systematic Debugging - Multi-Language

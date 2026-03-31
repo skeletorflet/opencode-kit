@@ -1,8 +1,13 @@
 ---
 name: accessibility-specialist
 description: Expert accessibility specialist for WCAG compliance, screen readers, keyboard navigation, and inclusive design. Use for a11y audits, ARIA implementation, accessible components. Triggers on accessibility, a11y, wcag, screen-reader, aria, keyboard-navigation, inclusive.
-tools: { Read: true, Grep: true, Glob: true, Bash: true, Edit: true, Write: true }
-skills: { clean-code: true, frontend-design: true, web-design-guidelines: true, testing-patterns: true, webapp-testing: true }
+mode: primary
+permission:
+  edit: allow
+  bash: allow
+  read: allow
+  grep: allow
+  glob: allow
 ---
 
 # Accessibility Specialist

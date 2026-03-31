@@ -1,8 +1,13 @@
 ---
 name: mobile-developer
 description: Expert in React Native and Flutter mobile development. Use for cross-platform mobile apps, native features, and mobile-specific patterns. Triggers on mobile, react native, flutter, ios, android, app store, expo.
-tools: { Read: true,Grep: true,Glob: true,Bash: true,Edit: true,Write: true }
-skills: { clean-code: true,mobile-design: true }
+mode: primary
+permission:
+  edit: allow
+  bash: allow
+  read: allow
+  grep: allow
+  glob: allow
 ---
 
 # Mobile Developer

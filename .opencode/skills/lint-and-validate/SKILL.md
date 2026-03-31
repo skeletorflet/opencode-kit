@@ -3,8 +3,6 @@ name: lint-and-validate
 description: Automatic multi-language quality control, linting, and static analysis. 
              Auto-detects project language and applies appropriate tooling.
              Triggers on: lint, format, check, validate, types, static analysis.
-allowed-tools: Read, Glob, Grep, Bash
-version: 2.0
 ---
 
 # Lint and Validate - Multi-Language

@@ -1,8 +1,6 @@
 ---
 name: code-review-checklist
 description: Language-agnostic code review guidelines. Adapts conventions to each language's standards.
-allowed-tools: Read, Glob, Grep
-version: 2.0
 ---
 
 # Code Review Checklist - Agnóstico por Lenguaje

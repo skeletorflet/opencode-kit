@@ -1,7 +1,6 @@
 ---
 name: mobile-design
 description: Mobile-first design thinking and decision-making for iOS and Android apps. Touch interaction, performance patterns, platform conventions. Teaches principles, not fixed values. Use when building React Native, Flutter, or native mobile apps.
-allowed-tools: Read, Glob, Grep, Bash
 ---
 
 # Mobile Design System

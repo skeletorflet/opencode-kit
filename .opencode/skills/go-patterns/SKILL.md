@@ -2,8 +2,6 @@
 name: go-patterns
 description: Go (Golang) development principles and decision-making. 
              Modern Go 1.22+ patterns, concurrency, project structure, API design.
-allowed-tools: Read, Write, Edit, Glob, Grep
-version: 1.0
 ---
 
 # Go Patterns - Modern Go 1.22+

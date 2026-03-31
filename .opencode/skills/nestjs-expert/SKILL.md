@@ -1,8 +1,6 @@
 ---
 name: nestjs-expert
 description: NestJS development principles and decision-making. Modern Node.js enterprise framework with TypeScript, dependency injection, modules.
-allowed-tools: Read, Write, Edit, Glob, Grep
-version: 1.0
 ---
 
 # NestJS Expert - Modern Node.js Enterprise Framework

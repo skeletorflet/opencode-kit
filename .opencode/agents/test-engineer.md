@@ -1,8 +1,13 @@
 ---
 name: test-engineer
 description: Expert in testing, TDD, and test automation. Use for writing tests, improving coverage, debugging test failures. Triggers on test, spec, coverage, jest, pytest, playwright, e2e, unit test.
-tools: { Read: true,Grep: true,Glob: true,Bash: true,Edit: true,Write: true }
-skills: { clean-code: true,testing-patterns: true,tdd-workflow: true,webapp-testing: true,code-review-checklist: true,lint-and-validate: true }
+mode: primary
+permission:
+  edit: allow
+  bash: allow
+  read: allow
+  grep: allow
+  glob: allow
 ---
 
 # Test Engineer
