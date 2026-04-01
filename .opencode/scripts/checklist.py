@@ -65,32 +65,32 @@ def print_error(text: str):
 CORE_CHECKS = [
     (
         "Security Scan",
-        ".opencode/skills/security/vulnerability-scanner/scripts/security_scan.py",
+        ".opencode/skills/vulnerability-scanner/scripts/security_scan.py",
         True,
     ),
     (
         "Lint Check",
-        ".opencode/skills/general/lint-and-validate/scripts/lint_runner.py",
+        ".opencode/skills/lint-and-validate/scripts/lint_runner.py",
         True,
     ),
     (
         "Schema Validation",
-        ".opencode/skills/backend/database-design/scripts/schema_validator.py",
+        ".opencode/skills/database-design/scripts/schema_validator.py",
         False,
     ),
     (
         "Test Runner",
-        ".opencode/skills/testing/testing-patterns/scripts/test_runner.py",
+        ".opencode/skills/testing-patterns/scripts/test_runner.py",
         False,
     ),
     (
         "UX Audit",
-        ".opencode/skills/frontend/frontend-design/scripts/ux_audit.py",
+        ".opencode/skills/frontend-design/scripts/ux_audit.py",
         False,
     ),
     (
         "SEO Check",
-        ".opencode/skills/general/seo-fundamentals/scripts/seo_checker.py",
+        ".opencode/skills/seo-fundamentals/scripts/seo_checker.py",
         False,
     ),
 ]
@@ -98,12 +98,12 @@ CORE_CHECKS = [
 PERFORMANCE_CHECKS = [
     (
         "Lighthouse Audit",
-        ".opencode/skills/general/performance-profiling/scripts/lighthouse_audit.py",
+        ".opencode/skills/performance-profiling/scripts/lighthouse_audit.py",
         True,
     ),
     (
         "Playwright E2E",
-        ".opencode/skills/testing/webapp-testing/scripts/playwright_runner.py",
+        ".opencode/skills/webapp-testing/scripts/playwright_runner.py",
         False,
     ),
 ]

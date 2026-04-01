@@ -43,9 +43,10 @@ Run validation scripts via: `python .opencode/scripts/<script>.py`
 | `ux_audit.py` | After UI change |
 | `checklist.py` | Final verification |
 
-## Skills & Agents
-- Agents: `.opencode/agents/` (33 specialists)
-- Skills: `.opencode/skills/` (57 knowledge modules)
-- Commands: `.opencode/commands/` (slash-commands)
+## Skills, Commands & Workflows
+- Agents: `.opencode/agents/` (34 specialists)
+- Skills: `.opencode/skills/` (71 knowledge modules)
+- Commands: `.opencode/commands/` (9 slash-commands)
+- Workflows: `.opencode/workflows/` (turbo-enabled sequences)
 - Tools: `.opencode/tools/` (custom callable tools)
 - Prompts: `.opencode/prompts/` (reusable prompt files)

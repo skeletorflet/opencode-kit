@@ -326,16 +326,16 @@ python .opencode/scripts/verify_all.py . --url http://localhost:3000
 npm run lint && npx tsc --noEmit
 
 # P0: Security Scan
-python .opencode/skills/security/vulnerability-scanner/scripts/security_scan.py .
+python .opencode/skills/vulnerability-scanner/scripts/security_scan.py .
 
 # P1: UX Audit
-python .opencode/skills/frontend/frontend-design/scripts/ux_audit.py .
+python .opencode/skills/frontend-design/scripts/ux_audit.py .
 
 # P3: Lighthouse (requires running server)
-python .opencode/skills/general/performance-profiling/scripts/lighthouse_audit.py http://localhost:3000
+python .opencode/skills/performance-profiling/scripts/lighthouse_audit.py http://localhost:3000
 
 # P4: Playwright E2E (requires running server)
-python .opencode/skills/testing/webapp-testing/scripts/playwright_runner.py http://localhost:3000 --screenshot
+python .opencode/skills/webapp-testing/scripts/playwright_runner.py http://localhost:3000 --screenshot
 ```
 
 #### 3. Build Verification

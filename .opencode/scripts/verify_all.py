@@ -72,7 +72,7 @@ VERIFICATION_SUITE = [
         "checks": [
             (
                 "Security Scan",
-                ".opencode/skills/security/vulnerability-scanner/scripts/security_scan.py",
+                ".opencode/skills/vulnerability-scanner/scripts/security_scan.py",
                 True,
             ),
         ],
@@ -83,12 +83,12 @@ VERIFICATION_SUITE = [
         "checks": [
             (
                 "Lint Check",
-                ".opencode/skills/general/lint-and-validate/scripts/lint_runner.py",
+                ".opencode/skills/lint-and-validate/scripts/lint_runner.py",
                 True,
             ),
             (
                 "Type Coverage",
-                ".opencode/skills/general/lint-and-validate/scripts/type_coverage.py",
+                ".opencode/skills/lint-and-validate/scripts/type_coverage.py",
                 False,
             ),
         ],
@@ -99,7 +99,7 @@ VERIFICATION_SUITE = [
         "checks": [
             (
                 "Schema Validation",
-                ".opencode/skills/backend/database-design/scripts/schema_validator.py",
+                ".opencode/skills/database-design/scripts/schema_validator.py",
                 False,
             ),
         ],
@@ -110,7 +110,7 @@ VERIFICATION_SUITE = [
         "checks": [
             (
                 "Test Suite",
-                ".opencode/skills/testing/testing-patterns/scripts/test_runner.py",
+                ".opencode/skills/testing-patterns/scripts/test_runner.py",
                 False,
             ),
         ],
@@ -121,12 +121,12 @@ VERIFICATION_SUITE = [
         "checks": [
             (
                 "UX Audit",
-                ".opencode/skills/frontend/frontend-design/scripts/ux_audit.py",
+                ".opencode/skills/frontend-design/scripts/ux_audit.py",
                 False,
             ),
             (
                 "Accessibility Check",
-                ".opencode/skills/frontend/frontend-design/scripts/accessibility_checker.py",
+                ".opencode/skills/frontend-design/scripts/accessibility_checker.py",
                 False,
             ),
         ],
@@ -137,12 +137,12 @@ VERIFICATION_SUITE = [
         "checks": [
             (
                 "SEO Check",
-                ".opencode/skills/general/seo-fundamentals/scripts/seo_checker.py",
+                ".opencode/skills/seo-fundamentals/scripts/seo_checker.py",
                 False,
             ),
             (
                 "GEO Check",
-                ".opencode/skills/general/geo-fundamentals/scripts/geo_checker.py",
+                ".opencode/skills/geo-fundamentals/scripts/geo_checker.py",
                 False,
             ),
         ],
@@ -154,7 +154,7 @@ VERIFICATION_SUITE = [
         "checks": [
             (
                 "Lighthouse Audit",
-                ".opencode/skills/general/performance-profiling/scripts/lighthouse_audit.py",
+                ".opencode/skills/performance-profiling/scripts/lighthouse_audit.py",
                 True,
             ),
         ],
@@ -166,7 +166,7 @@ VERIFICATION_SUITE = [
         "checks": [
             (
                 "Playwright E2E",
-                ".opencode/skills/testing/webapp-testing/scripts/playwright_runner.py",
+                ".opencode/skills/webapp-testing/scripts/playwright_runner.py",
                 False,
             ),
         ],
@@ -177,7 +177,7 @@ VERIFICATION_SUITE = [
         "checks": [
             (
                 "Mobile Audit",
-                ".opencode/skills/mobile/mobile-design/scripts/mobile_audit.py",
+                ".opencode/skills/mobile-design/scripts/mobile_audit.py",
                 False,
             ),
         ],
@@ -188,7 +188,7 @@ VERIFICATION_SUITE = [
         "checks": [
             (
                 "i18n Check",
-                ".opencode/skills/general/i18n-localization/scripts/i18n_checker.py",
+                ".opencode/skills/i18n-localization/scripts/i18n_checker.py",
                 False,
             ),
         ],

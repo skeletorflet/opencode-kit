@@ -4,8 +4,7 @@
   "small_model": "anthropic/claude-haiku-4-5-20251001",
   "instructions": [
     "AGENTS.md",
-    ".opencode/rules/RULES.md",
-    ".opencode/rules/GEMINI.md"
+    ".opencode/rules/RULES.md"
   ],
   "mcp": {
     "context7": {

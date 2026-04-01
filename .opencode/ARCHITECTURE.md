@@ -216,9 +216,9 @@ Opencode Kit is a modular system consisting of:
 
 ---
 
-## 📦 App Builder Templates (27)
+## 📦 App Builder Templates (26)
 
-### JavaScript/TypeScript (15)
+### JavaScript/TypeScript (12)
 - `nextjs-fullstack` - Next.js fullstack
 - `nextjs-saas` - Next.js SaaS
 - `nextjs-static` - Next.js static
@@ -231,9 +231,6 @@ Opencode Kit is a modular system consisting of:
 - `chrome-extension` - Chrome extension
 - `astro-static` - Astro static
 - `nestjs-api` - NestJS API
-- `astro-starlight` - Astro Starlight documentation
-- `solidstart-app` - SolidStart
-- `react-router-v7` - React Router v7
 
 ### Backend (8)
 - `python-fastapi` - FastAPI + SQLAlchemy
@@ -314,10 +311,11 @@ The kit now **automatically adapts** to the language being used:
 
 | Metric | Value |
 |--------|-------|
-| **Total Agents** | 33 |
-| **Total Skills** | 69 (flat structure, all discoverable by OpenCode) |
-| **Total Templates** | 27 |
-| **Total Commands** | 5 |
+| **Total Agents** | 34 |
+| **Total Skills** | 71 (flat structure, all discoverable by OpenCode) |
+| **Total Templates** | 26 |
+| **Total Commands** | 9 |
+| **Total Workflows** | 3 |
 | **Custom Tools** | 2 |
 | **Languages Supported** | 15+ (Go, Java, .NET, Kotlin, PHP, Ruby, C++, Swift, Python, Rust, JS/TS, Angular, Svelte, SolidJS) |
 | **Coverage** | Full multi-language development + Data/ML + Cloud + Accessibility |
