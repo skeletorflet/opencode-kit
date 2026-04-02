@@ -1,30 +1,28 @@
-# Antigravity Kit — OpenCode Agent Toolkit
+# OpenCode Kit
 
-> **34 specialist agents · 69 domain skills · 5 commands · 2 custom tools · 7 validation scripts**
+> **A production-grade multi-agent AI coding studio for [OpenCode](https://opencode.ai)**
 
-A production-grade AI agent capability expansion toolkit for [OpenCode](https://github.com/anomalyco/opencode). Transform your terminal into a multi-agent AI coding studio with domain-specialized assistants, reusable skills, custom tools, and automated workflows.
+Transform your terminal into a powerful AI engineering environment with 34 specialist agents, 71 domain skills, automated workflows, custom commands, plugins, and full multi-agent orchestration via [oh-my-opencode](https://github.com/code-yeongyu/oh-my-openagent).
 
 ---
 
-## At a Glance
+## What's Inside
 
-| Component | Count | Status |
-|-----------|-------|--------|
-| **Specialist Agents** | 34 | OpenCode-compatible frontmatter |
-| **Domain Skills** | 69 | Clean SKILL.md format |
-| **Custom Commands** | 5 | All agent references verified |
-| **Custom Tools** | 2 | TypeScript with error handling |
-| **Validation Scripts** | 7 | Python, cross-platform |
-| **Supported Languages** | 12+ | Go, Java, .NET, Kotlin, PHP, Ruby, C++, Swift, Python, Rust, TS/JS |
+| Component | Count | Description |
+|---|---|---|
+| **Specialist Agents** | 34 | Domain-expert AI assistants with scoped permissions |
+| **Domain Skills** | 71 | Reusable instruction sets loaded on demand |
+| **omo Personas** | 6 | Multi-agent orchestration system (Sisyphus, Prometheus, Atlas…) |
+| **Slash Commands** | 9 | One-liner task automation |
+| **Custom Tools** | 2 | TypeScript tools callable by agents |
+| **Plugins** | 3 | Notifications, env injection, env protection |
+| **Workflows** | 4 | Automated multi-step sequences |
+| **Validation Scripts** | 7 | Python audit tools |
+| **MCPs** | 4 | Context7, Shadcn, Netlify, Daytona |
 
 ---
 
 ## Quick Start
-
-### Prerequisites
-
-1. **[OpenCode CLI](https://github.com/anomalyco/opencode)** installed
-2. **At least one LLM provider** configured (OpenAI, Anthropic, Ollama, etc.)
 
 ### 1. Install OpenCode
 
@@ -32,430 +30,363 @@ A production-grade AI agent capability expansion toolkit for [OpenCode](https://
 curl -fsSL https://opencode.ai/install | bash
 ```
 
-### 2. Connect a Provider
+### 2. Clone this kit
+
+```bash
+git clone https://github.com/skeletorflet/opencode-kit
+cd opencode-kit
+```
+
+### 3. Configure your API keys
+
+```bash
+cp .env.example .env
+# Edit .env and add your Anthropic/OpenAI API key
+```
+
+### 4. Launch
 
 ```bash
 opencode
-# Then run /connect inside the TUI
 ```
 
-### 3. Start Coding
+Everything in `.opencode/` is auto-loaded. No manual setup required.
 
-```bash
-# Interactive mode
+---
+
+## Multi-Agent System — oh-my-opencode (omo)
+
+This kit integrates [oh-my-opencode](https://github.com/code-yeongyu/oh-my-openagent), a community plugin that transforms OpenCode into a full multi-agent orchestration system.
+
+### The Personas
+
+| Agent | Role | Use When |
+|---|---|---|
+| **Sisyphus** | Orchestrator — plans, delegates, executes in parallel | Starting any complex task |
+| **Prometheus** | Strategic planner — interviews you, defines scope, writes the plan | Before writing any code |
+| **Atlas** | Plan executor — reads Prometheus plans and runs them task by task | After a plan is approved |
+| **Oracle** | Architecture consultant (read-only) — never writes code, only advises | Architecture decisions |
+| **Librarian** | Documentation researcher — fast lookup via lightweight model | Docs and library research |
+| **Explore** | Codebase explorer (read-only) — maps structure fast | Understanding an unfamiliar repo |
+| **Hephaestus** | Deep autonomous worker — explores and executes end-to-end | Long autonomous tasks |
+
+### Core Rule
+
+> **Never use Atlas without a Prometheus plan.** Prometheus plans. Atlas executes.
+
+### omo Workflow
+
+```
+# 1. Start OpenCode with Sisyphus as orchestrator
 opencode
 
-# Quick one-shot
-opencode run "Explain how closures work in Go"
+# 2. Activate max performance mode
+ultrawork   (or: ulw)
 
-# With file context
-opencode run -f src/main.go "Review this code for issues"
+# 3. Let Prometheus plan the feature
+@prometheus "build a JWT auth system with refresh tokens"
+# Prometheus interviews you, then saves the plan to .sisyphus/plans/
 
-# Continue previous session
-opencode --continue
+# 4. Atlas executes the plan
+/start-work
+
+# 5. Consult Oracle on architecture (no code touched)
+@oracle "should I use event sourcing here?"
+
+# 6. Loop until done
+/ralph-loop    # iterates until all TODOs are complete
+/ulw-loop      # ultrawork + ralph together
 ```
+
+### omo Command Reference
+
+| Command | Description |
+|---|---|
+| `ultrawork` / `ulw` | Maximum parallel orchestration mode |
+| `ultrathink` | Extended thinking (32k token budget) |
+| `search` / `find` | Runs Explore + Librarian in parallel |
+| `analyze` / `investigate` | Deep multi-agent analysis |
+| `/start-work` | Atlas picks up the plan and executes |
+| `/ralph-loop` | Iterates until all TODOs are done |
+| `/ulw-loop` | Ultrawork + Ralph combined |
+| `/init-deep` | Generates hierarchical AGENTS.md in subdirectories |
+| `npx oh-my-opencode doctor` | Diagnostics |
+
+### omo Features Enabled
+
+| Feature | Config | Description |
+|---|---|---|
+| **Hashline Edit** | `hashline_edit: true` | Hash-verified edits — zero stale-line corruption |
+| **Ralph Loop** | `ralph_loop.enabled: true` | Agents don't stop until every TODO is complete |
+| **Compaction guard** | `preemptive-compaction` disabled | Stable context window management |
 
 ---
 
 ## Specialist Agents (34)
 
-Agents are AI assistants with specialized knowledge, tool access, and behavior. Each uses OpenCode's native `mode:` + `permission:` frontmatter.
+Invoked with `@agent-name` in the TUI. All use OpenCode's native `mode` + `permission` frontmatter.
 
-### Core Agents
+### Core
 
-| Agent | Mode | Domain |
-|-------|------|--------|
-| `orchestrator` | primary | Multi-agent coordination and task orchestration |
-| `project-planner` | primary | Task breakdown, planning, dependency graphs |
-| `explorer-agent` | primary | Codebase discovery and architectural analysis |
-| `debugger` | primary | Systematic debugging and root cause analysis |
-| `review` | primary | Code review, PR audits, quality checks |
+| Agent | Description |
+|---|---|
+| `orchestrator` | Multi-agent coordination, task breakdown, delegation |
+| `project-planner` | 4-phase planning methodology, task-slug files |
+| `explorer-agent` | Codebase discovery, architecture analysis |
+| `debugger` | Systematic root-cause analysis, error tracing |
+| `review` | Code review, PR audits, quality checks |
+| `code-archaeologist` | Legacy code analysis and modernization paths |
 
-### Frontend and Design
-
-| Agent | Domain |
-|-------|--------|
-| `frontend-specialist` | React, Next.js, TypeScript, Tailwind, performance |
-| `accessibility-specialist` | WCAG, ARIA, screen readers, inclusive design |
-| `seo-specialist` | SEO audits, Core Web Vitals, E-E-A-T, GEO |
-
-### Backend and Data
+### Frontend & Design
 
 | Agent | Domain |
-|-------|--------|
+|---|---|
+| `frontend-specialist` | React, Next.js, TypeScript, Tailwind, Core Web Vitals |
+| `accessibility-specialist` | WCAG 2.2, ARIA, screen readers, inclusive design |
+| `seo-specialist` | SEO audits, E-E-A-T, GEO, structured data |
+
+### Backend & Data
+
+| Agent | Domain |
+|---|---|
 | `backend-specialist` | Node.js, Python, serverless, edge systems |
 | `database-architect` | Schema design, migrations, indexing, Prisma |
 | `data-engineer` | ETL pipelines, data warehouses, Kafka, dbt |
-| `graphql-developer` | GraphQL APIs, Apollo, federation, resolvers |
+| `graphql-developer` | GraphQL APIs, Apollo, federation |
 | `ml-engineer` | ML pipelines, model serving, RAG, fine-tuning |
 | `cloud-architect` | AWS, Azure, GCP, serverless, containers |
-| `devops-engineer` | CI/CD, deployment, monitoring, infrastructure |
+| `devops-engineer` | CI/CD, Docker, monitoring, infrastructure |
 
 ### Language Specialists
 
-| Agent | Language | Focus |
-|-------|----------|-------|
-| `go-developer` | Go 1.22+ | APIs, microservices, CLI tools |
-| `java-developer` | Java 21+ | Spring Boot, Quarkus, Micronaut |
-| `dotnet-developer` | .NET 8 | ASP.NET Core, Blazor, Minimal APIs |
-| `kotlin-developer` | Kotlin 2.0 | Ktor, Spring Boot, Jetpack Compose |
-| `ruby-developer` | Ruby 3.3+ | Rails 7, Hanami, Sinatra |
-| `php-developer` | PHP 8.3 | Laravel 11, Symfony 7 |
-| `cpp-developer` | C++23/26 | Systems programming, game engines |
+| Agent | Language / Focus |
+|---|---|
+| `go-developer` | Go 1.22+, APIs, microservices, CLI tools |
+| `java-developer` | Java 21+, Spring Boot, Quarkus, Micronaut |
+| `dotnet-developer` | .NET 8, ASP.NET Core, Blazor, Minimal APIs |
+| `kotlin-developer` | Kotlin 2.0, Ktor, Jetpack Compose |
+| `ruby-developer` | Ruby 3.3+, Rails 7, Hanami |
+| `php-developer` | PHP 8.3, Laravel 11, Symfony 7 |
+| `cpp-developer` | C++23/26, systems programming, game engines |
 
-### Mobile and Games
+### Mobile & Games
 
 | Agent | Domain |
-|-------|--------|
+|---|---|
 | `mobile-developer` | React Native, Flutter, Expo |
 | `mobile-native` | Swift/SwiftUI (iOS), Kotlin/Compose (Android) |
 | `game-developer` | Unity, Godot, Unreal, Phaser, Three.js |
 
-### Quality and Security
+### Quality & Security
 
 | Agent | Domain |
-|-------|--------|
+|---|---|
 | `security-auditor` | OWASP 2025, supply chain, zero trust |
 | `penetration-tester` | Red team, vulnerability exploitation |
-| `test-engineer` | TDD, unit/E2E testing, coverage |
+| `test-engineer` | TDD, unit/E2E testing, coverage targets |
 | `qa-automation-engineer` | Playwright, Cypress, CI pipelines |
-| `performance-optimizer` | Profiling, Core Web Vitals, bundle optimization |
+| `performance-optimizer` | Profiling, Core Web Vitals, bundle analysis |
 
-### Product and Documentation
+### Product & Docs
 
 | Agent | Domain |
-|-------|--------|
+|---|---|
 | `product-manager` | Requirements, user stories, acceptance criteria |
 | `product-owner` | Roadmap, backlog, MVP, stakeholder management |
 | `documentation-writer` | README, API docs, tutorials, changelogs |
 
 ---
 
-## Domain Skills (69)
+## Domain Skills (71)
 
-Skills are reusable instruction sets (SKILL.md) that agents discover on-demand via the `skill` tool.
+Skills are `SKILL.md` instruction sets loaded on demand by agents. Organized by category.
 
 ### Development Patterns
 
-| Skill | Description |
-|-------|-------------|
-| `clean-code` | Language-agnostic coding standards |
-| `naming-conventions` | Naming rules by language |
-| `code-review-checklist` | Language-agnostic review guidelines |
-| `systematic-debugging` | 4-phase debugging methodology |
-| `tdd-workflow` | RED-GREEN-REFACTOR cycle |
-| `testing-patterns` | Unit, integration, mocking strategies |
-| `plan-writing` | Structured task planning |
-| `behavioral-modes` | AI operational modes |
-| `brainstorming` | Socratic questioning protocol |
+`clean-code` · `naming-conventions` · `code-review-checklist` · `systematic-debugging` · `tdd-workflow` · `testing-patterns` · `plan-writing` · `behavioral-modes` · `brainstorming` · `lint-and-validate`
 
-### Frontend and Design
+### Frontend & Design
 
-| Skill | Description |
-|-------|-------------|
-| `frontend-design` | Design thinking for web UI |
-| `react-best-practices` | React 18+ / Next.js performance |
-| `nextjs-react-expert` | React and Next.js from Vercel Engineering |
-| `tailwind-patterns` | Tailwind CSS v4, CSS-first configuration |
-| `web-design-guidelines` | Web interface guidelines compliance |
-| `ui-ux-pro-max` | 50+ visual styles, 21 color palettes |
+`frontend-design` · `react-best-practices` · `nextjs-react-expert` · `tailwind-patterns` · `web-design-guidelines` · `ui-ux-pro-max`
 
-### Backend and Frameworks
+### Backend & Frameworks
 
-| Skill | Description |
-|-------|-------------|
-| `nodejs-best-practices` | Node.js async, security, architecture |
-| `python-patterns` | Python async, type hints, project structure |
-| `go-patterns` | Go 1.22+ patterns, concurrency, project structure |
-| `go-concurrency` | Goroutines, channels, sync primitives |
-| `java-expert` | Java 21+, Spring Boot, Quarkus |
-| `spring-boot` | Spring Boot 3+ REST APIs, security |
-| `dotnet-expert` | .NET 8, ASP.NET Core, C# 12 |
-| `aspnet-core` | ASP.NET Core 8 Minimal APIs, MVC |
-| `kotlin-expert` | Kotlin 2.0, coroutines, Ktor, Compose |
-| `ruby-patterns` | Ruby 3.3+, Rails 7.2 |
-| `rails-patterns` | Rails 7+ Hotwire, Turbo, Stimulus |
-| `php-patterns` | PHP 8.3, Laravel 11, Symfony 7 |
-| `laravel-patterns` | Laravel 11 Eloquent, API, queues |
-| `django-patterns` | Django 4.2+ DRF, Celery, Docker |
-| `nestjs-expert` | NestJS TypeScript, DI, modules |
+`nodejs-best-practices` · `python-patterns` · `go-patterns` · `go-concurrency` · `java-expert` · `spring-boot` · `dotnet-expert` · `aspnet-core` · `kotlin-expert` · `ruby-patterns` · `rails-patterns` · `php-patterns` · `laravel-patterns` · `django-patterns` · `nestjs-expert`
 
-### Database and ORM
+### Database
 
-| Skill | Description |
-|-------|-------------|
-| `database-design` | Schema design, indexing, serverless databases |
-| `prisma-expert` | Prisma schema, migrations, query optimization |
+`database-design` · `prisma-expert`
 
-### DevOps and Infrastructure
+### DevOps & Infrastructure
 
-| Skill | Description |
-|-------|-------------|
-| `docker-expert` | Dockerfiles, multi-stage builds, security |
-| `deployment-procedures` | Safe deployment, rollback, verification |
-| `server-management` | Process management, monitoring, scaling |
-| `bash-linux` | Bash/Linux terminal patterns |
-| `powershell-windows` | PowerShell Windows patterns |
+`docker-expert` · `deployment-procedures` · `server-management` · `bash-linux` · `powershell-windows`
 
-### Security and Testing
+### Security & Testing
 
-| Skill | Description |
-|-------|-------------|
-| `vulnerability-scanner` | OWASP 2025, supply chain, attack surface |
-| `red-team-tactics` | MITRE ATT&CK, attack phases |
-| `webapp-testing` | E2E, Playwright, deep audit |
-| `performance-profiling` | Measurement, analysis, optimization |
-| `seo-fundamentals` | SEO, E-E-A-T, Core Web Vitals |
-| `geo-fundamentals` | Generative Engine Optimization |
+`vulnerability-scanner` · `red-team-tactics` · `webapp-testing` · `performance-profiling` · `seo-fundamentals` · `geo-fundamentals`
 
-### Mobile and Games
+### Mobile & Games
 
-| Skill | Description |
-|-------|-------------|
-| `mobile-design` | Mobile-first design, touch interaction |
-| `android-compose` | Jetpack Compose, Material 3 |
-| `swift-expert` | Swift 5.9+, SwiftUI, concurrency |
-| `game-development` | Multi-platform game development |
-| `2d-games` | Sprites, tilemaps, physics, camera |
-| `3d-games` | Rendering, shaders, physics |
-| `pc-games` | Engine selection, platform features |
-| `mobile-games` | Touch input, battery, app stores |
-| `web-games` | Framework selection, WebGPU, PWA |
-| `multiplayer` | Architecture, networking, synchronization |
-| `game-design` | GDD, balancing, player psychology |
-| `game-art` | Visual style, asset pipeline |
-| `game-audio` | Sound design, adaptive audio |
-| `vr-ar` | Comfort, interaction, performance |
+`mobile-design` · `android-compose` · `swift-expert` · `game-development` · `2d-games` · `3d-games` · `pc-games` · `mobile-games` · `web-games` · `multiplayer` · `game-design` · `game-art` · `game-audio` · `vr-ar`
 
-### Architecture and Advanced
+### Architecture & Advanced
 
-| Skill | Description |
-|-------|-------------|
-| `architecture` | Requirements, trade-offs, ADRs |
-| `api-patterns` | REST vs GraphQL vs tRPC |
-| `mcp-builder` | MCP server design, tools, resources |
-| `parallel-agents` | Multi-agent orchestration |
-| `intelligent-routing` | Automatic agent selection |
-| `app-builder` | Full-stack application creation |
-| `i18n-localization` | Translations, locale files, RTL |
-| `documentation-templates` | README, API docs, comments |
-| `systems-programming` | C++, Rust, memory, concurrency |
-| `rust-pro` | Rust 1.75+, async, production systems |
-| `cpp-modern` | C++23/26, RAII, performance |
-| `lint-and-validate` | Linting, validation, CI integration |
+`architecture` · `api-patterns` · `mcp-builder` · `parallel-agents` · `intelligent-routing` · `app-builder` · `i18n-localization` · `documentation-templates` · `systems-programming` · `rust-pro` · `cpp-modern` · `realtime-collaborative` · `ai-agent-integration`
 
 ---
 
-## Custom Commands (5)
+## Slash Commands (9)
 
-Slash commands for repetitive tasks. Run with `/command-name` in the TUI.
+Run inside the TUI with `/command-name [args]`.
 
 | Command | Agent | Description |
-|---------|-------|-------------|
+|---|---|---|
+| `/plan` | `project-planner` | Break down a feature into a structured task plan |
+| `/create` | `orchestrator` | Scaffold a new application or module |
+| `/enhance` | `frontend-specialist` | Improve code quality, performance, or design |
+| `/test` | `test-engineer` | Generate tests for a file or feature |
 | `/audit-security` | `security-auditor` | Full project security audit |
-| `/deploy-check` | `project-planner` | Verify project is ready to deploy |
-| `/fix-types` | `debugger` | Find and fix TypeScript errors |
+| `/deploy-check` | `project-planner` | Verify the project is ready to deploy |
+| `/fix-types` | `debugger` | Find and fix TypeScript type errors |
 | `/gen-docs` | `documentation-writer` | Generate documentation for a file |
 | `/review-pr` | `review` | Review branch changes before opening a PR |
 
-### Usage
+---
 
-```
-/audit-security src/
-/deploy-check
-/fix-types
-/gen-docs src/components/Button.tsx
-/review-pr
-```
+## Plugins (3)
+
+Auto-loaded from `.opencode/plugins/` at startup. Written in TypeScript, running on Bun.
+
+| Plugin | Description |
+|---|---|
+| `notification.ts` | Windows toast notification when session goes idle (native PowerShell, TUI-safe) |
+| `inject-env.ts` | Injects `PROJECT_ROOT` and `OPENCODE_KIT_ACTIVE` into every shell execution |
+| `env-protection.ts` | Blocks agents from reading `.env` files directly |
 
 ---
 
 ## Custom Tools (2)
 
-TypeScript tools callable by agents via the OpenCode plugin API.
+TypeScript tools callable by agents via the OpenCode tool API.
 
 | Tool | Description |
-|------|-------------|
-| `read-env` | Lists environment variable names from .env files (values hidden) |
-| `run-script` | Runs a package.json script and returns output with error handling |
+|---|---|
+| `read-env` | Lists environment variable names from `.env` files — values are never exposed |
+| `run-script` | Runs a `package.json` script and returns output with proper error handling |
+
+---
+
+## Workflows (4)
+
+Automated multi-step sequences. Run from the TUI or referenced by agents.
+
+| Workflow | Description |
+|---|---|
+| `01-project-kickoff` | From idea → planned → scaffolded → first commit |
+| `02-tdd-feature` | Red → Green → Refactor TDD development loop |
+| `03-pre-flight-audit` | Security · lint · build · test · commit before any deploy |
+| `04-omo-main-flow` | Full omo orchestration: Sisyphus → Prometheus → Atlas → Oracle |
+
+---
+
+## MCPs (4)
+
+Model Context Protocol servers configured in `opencode.json`.
+
+| MCP | Description |
+|---|---|
+| **Context7** | Live documentation for any library, injected directly into context |
+| **Shadcn** | Shadcn/ui component registry and management |
+| **Netlify** | Deploy and manage Netlify projects from the TUI |
+| **Daytona** | Isolated sandbox environments (requires `DAYTONA_API_KEY`) |
 
 ---
 
 ## Validation Scripts (7)
 
-Python scripts for quality assurance.
+Python scripts for quality assurance. Run via `python .opencode/scripts/<script>.py`.
 
-| Script | Location | Purpose |
-|--------|----------|---------|
-| `checklist.py` | `scripts/` | Priority-based project audit |
-| `verify_all.py` | `scripts/` | Comprehensive verification suite |
-| `auto_preview.py` | `scripts/` | Preview management |
-| `session_manager.py` | `scripts/` | Session lifecycle management |
-| `lint_runner.py` | `scripts/linters/` | Code linting automation |
-| `md_validator.py` | `scripts/linters/` | Markdown validation |
-| `test_runner_multi.py` | `scripts/testrunners/` | Multi-framework test execution |
+| Script | When to Use |
+|---|---|
+| `verify_all.py` | Comprehensive full-stack verification suite |
+| `checklist.py` | Priority-based project audit (Security → Lint → Schema → Test → UX → SEO) |
+| `lint_runner.py` | Code linting automation |
+| `test_runner_multi.py` | Multi-framework test execution |
+| `security_scan.py` | OWASP vulnerability scanning |
+| `ux_audit.py` | UI/UX quality audit |
+| `auto_preview.py` | Preview management |
+
+---
+
+## Environment Variables
+
+Copy `.env.example` to `.env` and fill your keys. The `inject-env.ts` plugin makes them available to all agent shell executions automatically.
+
+```bash
+cp .env.example .env
+```
+
+Key variables:
+
+| Variable | Description |
+|---|---|
+| `ANTHROPIC_API_KEY` | Anthropic Claude API key |
+| `OPENAI_API_KEY` | OpenAI API key |
+| `CONTEXT7_API_KEY` | Context7 MCP (Upstash) |
+| `DAYTONA_API_KEY` | Daytona sandbox MCP |
+| `DAYTONA_SERVER_URL` | Daytona server endpoint |
 
 ---
 
 ## Project Structure
 
 ```
-.
-├── DOC/                          ← Complete OpenCode documentation
-│   ├── README.md                 ← Documentation index
-│   ├── getting-started/          ← Introduction, installation, quick-start
-│   ├── core-concepts/            ← Agents, tools, commands, skills, permissions
-│   ├── configuration/            ← Config files, providers, models, themes
-│   ├── integrations/             ← MCP, plugins, LSP, custom tools, GitHub, GitLab
-│   ├── cli-reference/            ← CLI, TUI, server, ACP, env vars
-│   ├── advanced/                 ← SDK, share, enterprise, experimental
-│   ├── ecosystem/                ← Community plugins, projects, agents
-│   └── troubleshooting/          ← Windows, common issues, network
-├── .opencode/                    ← OpenCode kit (auto-loaded)
-│   ├── agents/                   ← 34 specialist agents (.md)
-│   ├── skills/                   ← 69 domain skills (SKILL.md)
-│   ├── commands/                 ← 5 custom commands (.md)
-│   ├── tools/                    ← 2 custom tools (.ts)
-│   ├── scripts/                  ← 7 validation scripts (.py)
-│   ├── prompts/                  ← System prompt templates
-│   ├── rules/                    ← Global rules (RULES.md)
-│   ├── ARCHITECTURE.md           ← Kit architecture overview
-│   ├── package.json              ← Plugin dependencies
-│   └── bun.lock                  ← Dependency lock file
-├── AGENTS.md                     ← Project-level agent instructions
-└── README.md                     ← This file
+opencode-kit/
+├── .env.example                  ← Environment variable template
+├── opencode.json                 ← Main OpenCode config (MCPs, agents, permissions)
+├── AGENTS.md                     ← Global agent routing rules
+├── DOC/                          ← OpenCode reference documentation (41 files)
+└── .opencode/
+    ├── agents/                   ← 34 specialist agents (.md)
+    ├── skills/                   ← 71 domain skills (SKILL.md)
+    ├── commands/                 ← 9 slash commands (.md)
+    ├── tools/                    ← 2 custom tools (.ts)
+    ├── plugins/                  ← 3 plugins (.ts)
+    ├── workflows/                ← 4 automated workflows (.md)
+    ├── scripts/                  ← 7 Python validation scripts
+    ├── prompts/                  ← System prompt templates
+    ├── rules/RULES.md            ← Global behavior rules (P0 priority)
+    ├── oh-my-opencode.jsonc      ← omo multi-agent config
+    ├── ARCHITECTURE.md           ← Technical architecture overview
+    └── package.json              ← Plugin dependencies (Bun)
 ```
 
 ---
 
-## Configuration
+## Agent Routing Rules
 
-### Agent Frontmatter Format
+The kit enforces automatic agent selection via `RULES.md`. When you write a request, the AI:
 
-All agents use OpenCode's native format:
+1. **Classifies** the request type (question / code / design / security…)
+2. **Selects** the best specialist agent(s) automatically
+3. **Announces** `🤖 Applying knowledge of @[agent-name]...`
+4. **Loads** required skills from the agent's frontmatter
+5. **Applies** the agent's specific rules and coding standards
 
-```yaml
----
-name: agent-name
-description: What this agent does
-mode: primary
-permission:
-  edit: allow
-  bash: allow
-  read: allow
-  grep: allow
-  glob: allow
----
-```
-
-### Skill Frontmatter Format
-
-All skills follow the OpenCode specification:
-
-```yaml
----
-name: skill-name
-description: What this skill teaches
-license: MIT              # optional
-compatibility: opencode   # optional
-metadata:                 # optional
-  audience: developers
-  category: backend
----
-```
-
----
-
-## Common Workflows
-
-### Create a New Application
-
-```bash
-opencode
-# Switch to plan mode (Tab), describe your application
-# Review the plan, switch back to build mode (Tab)
-# "Looks good, implement it"
-```
-
-### Code Review
-
-```
-/review-pr
-# or
-@security-auditor Review the auth implementation in @src/auth/
-```
-
-### Fix TypeScript Errors
-
-```
-/fix-types
-```
-
-### Security Audit
-
-```
-/audit-security
-```
-
-### Deploy Check
-
-```
-/deploy-check
-```
-
----
-
-## Supported Languages and Frameworks
-
-| Language | Frameworks | Agent |
-|----------|-----------|-------|
-| **TypeScript/JavaScript** | React, Next.js, Node.js, Express, NestJS | `frontend-specialist`, `backend-specialist` |
-| **Go** | Gin, Echo, Fiber | `go-developer` |
-| **Java** | Spring Boot, Quarkus, Micronaut | `java-developer` |
-| **.NET/C#** | ASP.NET Core, Blazor | `dotnet-developer` |
-| **Kotlin** | Ktor, Spring Boot, Jetpack Compose | `kotlin-developer` |
-| **Ruby** | Rails, Hanami, Sinatra | `ruby-developer` |
-| **PHP** | Laravel, Symfony, Slim | `php-developer` |
-| **C++** | Modern C++23/26 | `cpp-developer` |
-| **Python** | Django, FastAPI, Flask | `backend-specialist` |
-| **Rust** | Tokio, axum | `rust-pro` (skill) |
-| **Swift** | SwiftUI | `mobile-native` |
-| **Dart** | Flutter | `mobile-developer` |
-
----
-
-## Documentation
-
-Complete documentation is available in the `DOC/` directory:
-
-| Section | Description |
-|---------|-------------|
-| [Getting Started](DOC/getting-started/introduction.md) | What is OpenCode, installation, quick start |
-| [Core Concepts](DOC/core-concepts/agents.md) | Agents, tools, commands, skills, permissions |
-| [Configuration](DOC/configuration/config-files.md) | Config files, providers, models, themes |
-| [Integrations](DOC/integrations/mcp-servers.md) | MCP servers, plugins, LSP, custom tools |
-| [CLI Reference](DOC/cli-reference/cli-overview.md) | All CLI commands and flags |
-| [Advanced](DOC/advanced/sdk.md) | SDK, sharing, enterprise, experimental |
-| [Ecosystem](DOC/ecosystem/plugins.md) | Community plugins, projects, agents |
-| [Troubleshooting](DOC/troubleshooting/windows.md) | Windows setup, common issues, network |
+**Priority:** `RULES.md (P0)` > `Agent .md (P1)` > `SKILL.md (P2)`
 
 ---
 
 ## Resources
 
 | Resource | Link |
-|----------|------|
+|---|---|
+| **OpenCode** | [opencode.ai](https://opencode.ai) |
 | **OpenCode GitHub** | [github.com/anomalyco/opencode](https://github.com/anomalyco/opencode) |
-| **OpenCode Docs** | [opencode.ai/docs](https://opencode.ai/docs) |
-| **Discord** | [opencode.ai/discord](https://opencode.ai/discord) |
-| **Awesome OpenCode** | [github.com/awesome-opencode/awesome-opencode](https://github.com/awesome-opencode/awesome-opencode) |
-| **Community** | [opencode.cafe](https://opencode.cafe) |
-
+| **oh-my-openagent** | [github.com/code-yeongyu/oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent) |
+| **OpenCode Discord** | [opencode.ai/discord](https://opencode.ai/discord) |
+| **Context7** | [context7.com](https://context7.com) |
 
 ---
 
-Built for the OpenCode community.
-
 Read [ARCHITECTURE.md](.opencode/ARCHITECTURE.md) for the full technical overview.
-
-Browse the [DOC/](DOC/) directory for complete OpenCode documentation.
