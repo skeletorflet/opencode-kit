@@ -1,4 +1,7 @@
 {
+  "name": "opencode-custom-plugins",
+  "version": "1.0.0",
+  "description": "Dependencias locales para plugins de OpenCode",
   "dependencies": {
     "@opencode-ai/plugin": "1.2.26"
   }

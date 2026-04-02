@@ -1,0 +1,138 @@
+# Compartir
+
+Comparte tus conversaciones OpenCode.
+
+La función para compartir de OpenCode te permite crear enlaces públicos a tus conversaciones de OpenCode, para que puedas colaborar con compañeros de equipo u obtener ayuda de otros.
+
+---
+
+## [Cómo funciona](#cómo-funciona)
+
+Cuando compartes una conversación, OpenCode:
+
+1. Crea una URL pública única para su sesión.
+2. Sincroniza tu historial de conversaciones con nuestros servidores
+3. Hace que la conversación sea accesible a través del enlace para compartir: `opncd.ai/s/<share-id>`
+
+---
+
+## [Uso compartido](#uso-compartido)
+
+OpenCode admite tres modos de compartir que controlan cómo se comparten las conversaciones:
+
+---
+
+### [Manual (predeterminado)](#manual-predeterminado)
+
+De forma predeterminada, OpenCode usa el modo de compartir manual. Las sesiones no se comparten automáticamente, pero puedes compartirlas manualmente usando el comando `/share`:
+
+```
+/share
+```
+
+Esto generará una URL única que se copiará en su portapapeles.
+
+Para configurar explícitamente el modo manual en su [archivo de configuración](/docs/config):
+
+opencode.json
+
+```
+{
+
+"$schema": "https://opencode.ai/config.json",
+
+"share": "manual"
+
+}
+```
+
+---
+
+### [Compartir automáticamente](#compartir-automáticamente)
+
+Puede habilitar el uso compartido automático para todas las conversaciones nuevas configurando la opción `share` en `"auto"` en su [archivo de configuración](/docs/config):
+
+opencode.json
+
+```
+{
+
+"$schema": "https://opencode.ai/config.json",
+
+"share": "auto"
+
+}
+```
+
+Con el uso compartido automático habilitado, cada nueva conversación se compartirá automáticamente y se generará un enlace.
+
+---
+
+### [Desactivado](#desactivado)
+
+Puede desactivar el uso compartido por completo configurando la opción `share` en `"disabled"` en su [archivo de configuración](/docs/config):
+
+opencode.json
+
+```
+{
+
+"$schema": "https://opencode.ai/config.json",
+
+"share": "disabled"
+
+}
+```
+
+Para aplicar esto en todo su equipo para un proyecto determinado, agréguelo al `opencode.json` en su proyecto y regístrelo en Git.
+
+---
+
+## [Dejar de compartir](#dejar-de-compartir)
+
+Para dejar de compartir una conversación y eliminarla del acceso público:
+
+```
+/unshare
+```
+
+Esto eliminará el enlace para compartir y eliminará los datos relacionados con la conversación.
+
+---
+
+## [Privacidad](#privacidad)
+
+Hay algunas cosas a tener en cuenta al compartir una conversación.
+
+---
+
+### [Retención de datos](#retención-de-datos)
+
+Las conversaciones compartidas permanecen accesibles hasta que las dejes de compartir explícitamente. Este
+incluye:
+
+* Historial de conversaciones completo
+* Todos los mensajes y respuestas.
+* Metadatos de la sesión
+
+---
+
+### [Recomendaciones](#recomendaciones)
+
+* Comparta únicamente conversaciones que no contengan información confidencial.
+* Revisar el contenido de la conversación antes de compartir.
+* Dejar de compartir conversaciones cuando se complete la colaboración.
+* Evite compartir conversaciones con código propietario o datos confidenciales.
+* Para proyectos confidenciales, deshabilite el uso compartido por completo.
+
+---
+
+## [Para empresas](#para-empresas)
+
+Para implementaciones empresariales, la función de compartir puede ser:
+
+* **Desactivado** completamente por motivos de seguridad.
+* **Restringido** solo a usuarios autenticados a través de SSO
+* **Autohospedado** en tu propia infraestructura
+
+[Obtenga más información](/docs/enterprise) sobre el uso de opencode en su organización.

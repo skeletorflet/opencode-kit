@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
 Master Checklist Runner - Opencode Kit
 ======================================
@@ -21,6 +22,13 @@ Priority Order:
 """
 
 import sys
+import io
+
+# Fix Windows console encoding for emojis and Unicode
+if sys.platform == "win32":
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8")
+
 import subprocess
 import argparse
 from pathlib import Path
