@@ -8,33 +8,25 @@
   "disabled_hooks": ["preemptive-compaction"],
   "agents": {
     "sisyphus": {
-      "model": "",
       "ultrawork": {
-        "model": "",
         "variant": "max"
       }
     },
     "prometheus": {
-      "model": "",
-      "prompt_append": "Leverage deep & quick agents heavily, always in parallel."
+      "prompt_append": "When delegating subtasks, use run_in_background=true for parallel exploration and run_in_background=false for sequential task delegation. Always specify this parameter explicitly."
     },
-    "atlas": {
-      "model": ""
-    },
+    "atlas": {},
     "oracle": {
-      "model": "",
       "variant": "high"
     },
-    "hephaestus": {
-      "model": ""
-    },
-    "librarian": { "model": "" },
-    "explore":   { "model": "", "temperature": 0.1 }
+    "hephaestus": {},
+    "librarian": {},
+    "explore":   { "temperature": 0.1 }
   },
   "categories": {
-    "quick":            { "model": "" },
-    "unspecified-low":  { "model": "" },
-    "unspecified-high": { "model": "" },
-    "deep":             { "model": "" }
+    "quick":            {},
+    "unspecified-low":  {},
+    "unspecified-high": {},
+    "deep":             {}
   }
 }
