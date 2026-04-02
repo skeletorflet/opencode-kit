@@ -391,7 +391,7 @@ path: { id: session.id },
 
 body: {
 
-model: { providerID: "anthropic", modelID: "claude-3-5-sonnet-20241022" },
+model: { providerID: "anthropic", modelID: "" },
 
 parts: [{ type: "text", text: "Hello!" }],
 

@@ -27,7 +27,7 @@ description: Run tests with coverage
 
 agent: build
 
-model: anthropic/claude-3-5-sonnet-20241022
+model: ""
 
 ---
 
@@ -79,7 +79,7 @@ opencode.jsonc
 
 "agent": "build",
 
-"model": "anthropic/claude-3-5-sonnet-20241022"
+"model": ""
 
 }
 
@@ -112,7 +112,7 @@ description: Run tests with coverage
 
 agent: build
 
-model: anthropic/claude-3-5-sonnet-20241022
+model: ""
 
 ---
 
@@ -392,7 +392,7 @@ opencode.json
 
 "analyze": {
 
-"model": "anthropic/claude-3-5-sonnet-20241022"
+"model": ""
 
 }
 

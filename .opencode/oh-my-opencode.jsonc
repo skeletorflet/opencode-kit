@@ -3,30 +3,45 @@
   "hashline_edit": true,
   "ralph_loop": {
     "enabled": true,
-    "default_max_iterations": 100
+    "default_max_iterations": 100,
+    "default_strategy": "continue"
   },
-  "disabled_hooks": ["preemptive-compaction"],
+  "disabled_hooks": [
+    "preemptive-compaction"
+  ],
   "agents": {
     "sisyphus": {
+      "model": "",
       "ultrawork": {
         "variant": "max"
       }
     },
     "prometheus": {
+      "model": "",
       "prompt_append": "When delegating subtasks, use run_in_background=true for parallel exploration and run_in_background=false for sequential task delegation. Always specify this parameter explicitly."
     },
-    "atlas": {},
+    "atlas": {
+      "model": ""
+    },
     "oracle": {
+      "model": "",
       "variant": "high"
     },
-    "hephaestus": {},
-    "librarian": {},
-    "explore":   { "temperature": 0.1 }
+    "hephaestus": {
+      "model": ""
+    },
+    "librarian": {
+      "model": ""
+    },
+    "explore": {
+      "model": "",
+      "temperature": 0.1
+    }
   },
   "categories": {
-    "quick":            {},
-    "unspecified-low":  {},
+    "quick": {},
+    "unspecified-low": {},
     "unspecified-high": {},
-    "deep":             {}
+    "deep": {}
   }
 }

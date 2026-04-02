@@ -17,7 +17,7 @@ opencode.jsonc
 
 "$schema": "https://opencode.ai/config.json",
 
-"model": "anthropic/claude-sonnet-4-5",
+"model": "",
 
 "autoupdate": true,
 
@@ -292,9 +292,9 @@ opencode.json
 
 "provider": {},
 
-"model": "anthropic/claude-sonnet-4-5",
+"model": "",
 
-"small_model": "anthropic/claude-haiku-4-5"
+"small_model": ""
 
 }
 ```
@@ -420,7 +420,7 @@ opencode.jsonc
 
 "description": "Reviews code for best practices and potential issues",
 
-"model": "anthropic/claude-sonnet-4-5",
+"model": "",
 
 "prompt": "You are a code reviewer. Focus on security, performance, and maintainability.",
 
@@ -514,7 +514,7 @@ opencode.jsonc
 
 "agent": "build",
 
-"model": "anthropic/claude-haiku-4-5",
+"model": "",
 
 },
 

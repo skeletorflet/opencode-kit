@@ -185,7 +185,7 @@ adapter = {
 
 name = "opencode",
 
-model = "claude-sonnet-4",
+model = "",
 
 },
 

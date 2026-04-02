@@ -142,7 +142,7 @@ opencode.json
 
 "mode": "primary",
 
-"model": "anthropic/claude-sonnet-4-20250514",
+"model": "",
 
 "prompt": "{file:./prompts/build.txt}",
 
@@ -162,7 +162,7 @@ opencode.json
 
 "mode": "primary",
 
-"model": "anthropic/claude-haiku-4-20250514",
+"model": "",
 
 "tools": {
 
@@ -182,7 +182,7 @@ opencode.json
 
 "mode": "subagent",
 
-"model": "anthropic/claude-sonnet-4-20250514",
+"model": "",
 
 "prompt": "You are a code reviewer. Focus on security, performance, and maintainability.",
 
@@ -219,7 +219,7 @@ description: Reviews code for quality and best practices
 
 mode: subagent
 
-model: anthropic/claude-sonnet-4-20250514
+model: ""
 
 temperature: 0.1
 
@@ -451,7 +451,7 @@ opencode.json
 
 "plan": {
 
-"model": "anthropic/claude-haiku-4-20250514"
+"model": ""
 
 }
 

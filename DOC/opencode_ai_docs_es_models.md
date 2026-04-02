@@ -105,7 +105,7 @@ opencode.jsonc
 
 "models": {
 
-"claude-sonnet-4-5-20250929": {
+"": {
 
 "options": {
 
@@ -286,7 +286,7 @@ Cuando se inicia OpenCode, busca modelos en el siguiente orden de prioridad:
 
    "$schema": "https://opencode.ai/config.json",
 
-   "model": "anthropic/claude-sonnet-4-20250514"
+   "model": ""
 
    }
    ```

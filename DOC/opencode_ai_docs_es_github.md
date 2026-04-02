@@ -92,7 +92,7 @@ O puede configurarlo manualmente.
 
    with:
 
-   model: anthropic/claude-sonnet-4-20250514
+   model: ""
 
    # share: true
 
@@ -194,7 +194,7 @@ ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
 
 with:
 
-model: anthropic/claude-sonnet-4-20250514
+model: ""
 
 prompt: |
 
@@ -256,7 +256,7 @@ GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 with:
 
-model: anthropic/claude-sonnet-4-20250514
+model: ""
 
 use_github_token: true
 
@@ -350,7 +350,7 @@ ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
 
 with:
 
-model: anthropic/claude-sonnet-4-20250514
+model: ""
 
 prompt: |
 
@@ -378,7 +378,7 @@ Anule el mensaje predeterminado para personalizar el comportamiento de OpenCode 
 
 with:
 
-model: anthropic/claude-sonnet-4-5
+model: ""
 
 prompt: |
 
