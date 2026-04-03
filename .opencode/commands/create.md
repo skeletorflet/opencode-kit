@@ -1,6 +1,6 @@
 ---
 description: Initialize a new project or boilerplate from standard templates
-agent: app-builder
+agent: orchestrator
 ---
 
 Start scaffolding a new project or major module based on the request: $ARGUMENTS
