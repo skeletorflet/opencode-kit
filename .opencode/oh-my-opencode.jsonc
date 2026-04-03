@@ -1,47 +1,179 @@
 {
   "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json",
-  "hashline_edit": true,
+  // ── Core flags ──────────────────────────────────────────────────────────────
+  "hashline_edit": true, // hash-anchored edits, zero stale-line errors
+  "model_fallback": true, // NUEVO: fallback automático si el modelo falla
+  "auto_update": true, // NUEVO: mantiene el plugin actualizado solo
+  // ── Ralph Loop ──────────────────────────────────────────────────────────────
   "ralph_loop": {
     "enabled": true,
     "default_max_iterations": 100,
     "default_strategy": "continue"
   },
+  // ── Runtime fallback (NUEVO) ─────────────────────────────────────────────────
+  // Reintenta automáticamente con modelos de fallback ante errores HTTP
+  "runtime_fallback": {
+    "enabled": true,
+    "retry_on_errors": [
+      429,
+      500,
+      502,
+      503,
+      529
+    ],
+    "max_fallback_attempts": 5,
+    "cooldown_seconds": 3,
+    "notify_on_fallback": true
+  },
+  // ── Background task concurrency (NUEVO) ─────────────────────────────────────
+  "background_task": {
+    "defaultConcurrency": 4, // hasta 4 agentes en paralelo
+    "maxDepth": 5, // profundidad máxima de delegación
+    "maxDescendants": 20 // máx sub-agentes por sesión
+  },
+  // ── Sisyphus agent config (NUEVO) ───────────────────────────────────────────
+  "sisyphus_agent": {
+    "planner_enabled": true, // activa Prometheus como planner
+    "default_builder_enabled": true // activa builder por defecto
+  },
+  // ── Start work (NUEVO) ──────────────────────────────────────────────────────
+  "start_work": {
+    "auto_commit": true
+  },
+  // ── Git master skill config (NUEVO) ─────────────────────────────────────────
+  "git_master": {
+    "commit_footer": true,
+    "include_co_authored_by": true,
+    "git_env_prefix": "GIT_MASTER=1"
+  },
+  // ── Notifications (NUEVO) ───────────────────────────────────────────────────
+  "notification": {
+    "force_enable": true
+  },
+  // ── Babysitting — rescata agentes que se quedan colgados (NUEVO) ─────────────
+  "babysitting": {
+    "timeout_ms": 90000 // 90s antes de rescatar un agente bloqueado
+  },
+  // ── Web search provider (NUEVO) ─────────────────────────────────────────────
+  "websearch": {
+    "provider": "exa" // exa (built-in gratis) o tavily
+  },
+  // ── Disabled hooks ──────────────────────────────────────────────────────────
   "disabled_hooks": [
     "preemptive-compaction"
   ],
+  // ── Experimental (NUEVO) ────────────────────────────────────────────────────
+  "experimental": {
+    "auto_resume": true, // reanuda sesiones cortadas automáticamente
+    "dynamic_context_pruning": {
+      "enabled": true,
+      "notification": "minimal", // avisa cuando poda el contexto
+      "protected_tools": [
+        "task",
+        "todowrite",
+        "todoread",
+        "lsp_rename",
+        "session_read",
+        "session_write",
+        "session_search"
+      ],
+      "turn_protection": {
+        "enabled": true,
+        "turns": 3
+      },
+      "strategies": {
+        "deduplication": {
+          "enabled": true
+        },
+        "supersede_writes": {
+          "enabled": true,
+          "aggressive": false
+        },
+        "purge_errors": {
+          "enabled": true,
+          "turns": 5
+        }
+      }
+    }
+  },
+  // ── Agents ──────────────────────────────────────────────────────────────────
   "agents": {
+    // Orchestrador principal
     "sisyphus": {
       "model": "",
       "ultrawork": {
         "variant": "max"
       }
     },
+    // Planner estratégico
     "prometheus": {
       "model": "",
-      "prompt_append": "When delegating subtasks, use run_in_background=true for parallel exploration and run_in_background=false for sequential task delegation. Always specify this parameter explicitly."
+      "prompt_append": "When delegating subtasks, use run_in_background=true for parallel exploration and run_in_background=false for sequential task delegation. Always specify this parameter explicitly. Perform gap analysis, reviews, and all planning steps directly yourself without delegating to other agents."
     },
+    // Worker profundo autónomo
     "atlas": {
       "model": ""
     },
+    // Arquitectura / debugging — "high" variant para razonamiento extra
     "oracle": {
       "model": "",
       "variant": "high"
     },
+    // Craftsman: edición profunda de código
     "hephaestus": {
       "model": ""
     },
+    // Docs + search
     "librarian": {
       "model": ""
     },
+    // Grep rápido del codebase — temperature baja = determinístico
     "explore": {
       "model": "",
       "temperature": 0.1
+    },
+    // NUEVO: sub-orquestador liviano (útil para tareas medianas)
+    "sisyphus-junior": {
+      "model": ""
+    },
+    // NUEVO: análisis de imágenes/screenshots/UI
+    "multimodal-looker": {
+      "model": ""
+    },
+    // NUEVO: consultor de planes (revisión de planes de Prometheus)
+    "metis": {
+      "model": ""
+    },
+    // NUEVO: crítico / QA de código y decisiones
+    "momus": {
+      "model": ""
     }
   },
+  // ── Categories ──────────────────────────────────────────────────────────────
   "categories": {
-    "quick": {},
-    "unspecified-low": {},
-    "unspecified-high": {},
-    "deep": {}
+    // Cambios de 1 archivo, typos, fixes triviales
+    "quick": {
+      "description": "Single-file changes, typos, quick fixes"
+    },
+    // Tareas genéricas de bajo costo
+    "unspecified-low": {
+      "description": "Low-cost general tasks"
+    },
+    // Tareas genéricas de mayor costo
+    "unspecified-high": {
+      "description": "High-cost general tasks"
+    },
+    // Investigación + ejecución autónoma profunda
+    "deep": {
+      "description": "Autonomous deep research and execution"
+    },
+    // NUEVO: frontend, UI/UX, diseño
+    "visual-engineering": {
+      "description": "Frontend, UI/UX, design tasks"
+    },
+    // NUEVO: lógica compleja, decisiones de arquitectura
+    "ultrabrain": {
+      "description": "Hard logic, architecture decisions, complex reasoning"
+    }
   }
 }
