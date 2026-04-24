@@ -1,26 +1,61 @@
-# Node modules
+# Dependencies
 node_modules/
+.pnp
+.pnp.js
 
-# Python cache
-__pycache__
-*.py[cod]
+# Testing
+coverage/
 
-# OS generated files
+# Next.js build output
+.next/
+out/
+dist/
+build/
+
+# Production
+*.tsbuildinfo
+next-env.d.ts
+
+# Misc
 .DS_Store
+*.pem
 Thumbs.db
 
-# Logs
-*.log
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
 
-# Environment variables
+# Local env files
 .env
-.env.*
-!.env.example
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# Opencode specific
-.opencode/tool-output/
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
-# Development utils
-utils/
-testing/
-testing2/
+# Netlify
+.netlify/
+
+# Build output files
+build_output.txt
+
+# Project specific
+CODIGO_PARA_PEGAR_EN_GOOGLE.js
+test-email-v2.html
+original/
+
+# Cache
+*.cache
+.turbo/
+out.zip
+.aider*

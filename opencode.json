@@ -2,6 +2,11 @@
   "$schema": "https://opencode.ai/config.json",
   "model": "",
   "small_model": "",
+  "plugin": [
+    "./.opencode/plugins/load-env.js",
+    // "@daytonaio/opencode",
+    "oh-my-openagent"
+  ],
   "instructions": [
     "AGENTS.md",
     ".opencode/rules/RULES.md"
@@ -35,35 +40,26 @@
         "@netlify/mcp"
       ],
       "enabled": true
-    },
-    "daytona": {
-      "type": "local",
-      "command": [
-        "npx",
-        "-y",
-        "@daytonaio/daytona-mcp"
-      ],
-      "enabled": true
     }
   },
   "permission": {
     "read": {
       "*": "allow",
-      "*.env": "deny",
-      "*.env.*": "deny",
+      "*.env": "allow",
+      "*.env.*": "allow",
       "*.env.example": "allow"
     },
-    "edit": "ask",
-    "write": "ask",
+    "edit": "allow",
+    "write": "allow",
     "bash": {
-      "*": "ask",
+      "*": "allow",
       "git status": "allow",
       "git status*": "allow",
       "git diff*": "allow",
       "git log*": "allow",
-      "npm run*": "ask",
-      "pnpm *": "ask",
-      "node *": "ask",
+      "npm run*": "allow",
+      "pnpm *": "allow",
+      "node *": "allow",
       "cat *": "allow",
       "grep *": "allow",
       "find *": "allow",
@@ -71,9 +67,9 @@
       "dir*": "allow",
       "python *": "allow",
       "python3 *": "allow",
-      "rm *": "deny",
-      "del *": "deny",
-      "rmdir *": "deny"
+      "rm *": "allow",
+      "del *": "allow",
+      "rmdir *": "allow"
     },
     "webfetch": "allow",
     "websearch": "allow",
@@ -85,24 +81,24 @@
     "task": {
       "*": "allow"
     },
-    "external_directory": "ask",
-    "doom_loop": "ask"
+    "external_directory": "allow",
+    "doom_loop": "allow"
   },
   "agent": {
     "build": {
       "mode": "primary",
       "prompt": "{file:.opencode/prompts/build.txt}",
       "permission": {
-        "edit": "ask",
+        "edit": "allow",
         "bash": {
-          "*": "ask",
+          "*": "allow",
           "git status": "allow",
           "git status*": "allow",
           "git diff*": "allow",
           "git log*": "allow",
-          "npm run*": "ask",
-          "pnpm *": "ask",
-          "node *": "ask"
+          "npm run*": "allow",
+          "pnpm *": "allow",
+          "node *": "allow"
         }
       }
     },
@@ -110,22 +106,22 @@
       "mode": "primary",
       "temperature": 0.1,
       "permission": {
-        "edit": "deny",
-        "bash": "deny"
+        "edit": "allow",
+        "bash": "allow"
       }
     },
     "review": {
       "mode": "subagent",
       "temperature": 0.1,
       "permission": {
-        "edit": "deny",
+        "edit": "allow",
         "bash": {
-          "*": "deny",
+          "*": "allow",
           "git diff*": "allow",
           "git log*": "allow",
           "grep *": "allow"
         },
-        "webfetch": "deny"
+        "webfetch": "allow"
       }
     },
     "debugger": {
@@ -133,9 +129,9 @@
       "temperature": 0.1,
       "steps": 15,
       "permission": {
-        "edit": "ask",
+        "edit": "allow",
         "bash": {
-          "*": "ask",
+          "*": "allow",
           "cat *": "allow",
           "grep *": "allow",
           "find *": "allow"
